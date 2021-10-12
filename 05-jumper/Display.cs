@@ -6,7 +6,7 @@ namespace _05_jumper
        {
            
        }
-       public void AddLetter()
+       public void CreateParachute()
        {
            
        }
@@ -14,7 +14,7 @@ namespace _05_jumper
        {
            
        }
-       public void createParachute()
+       public void AddLetter()
        {
 
        }
