@@ -8,6 +8,7 @@ namespace _05_jumper
         public int life = 4;
         public List<string> _Parachute = new List<string>();
         Word _word = new Word();
+        
 
         ///<summary>
         // in this function Removelife
@@ -25,8 +26,7 @@ namespace _05_jumper
        public List<string> CreateParachute()
        {
            _Parachute.Add(" ___ ");
-           _Parachute.Add(@"/   \");
-           _Parachute.Add(" ___ ");
+           _Parachute.Add(@"/___\");
            _Parachute.Add(@"\   / ");
            _Parachute.Add(@" \ /");
            _Parachute.Add("  0  ");
@@ -61,16 +61,15 @@ namespace _05_jumper
            else if(life == 2)
            {
                _Parachute[1] = "     ";
-               _Parachute[2] = "     ";
            }
            else if(life == 1)
            {
-               _Parachute[3] = "     ";
+               _Parachute[2] = "     ";
            }
            else
            {
-               _Parachute[4] = "     ";
-               _Parachute[5] = "  x  ";
+               _Parachute[3] = "     ";
+               _Parachute[4] = "  x  ";
            }
            return _Parachute;
        }
