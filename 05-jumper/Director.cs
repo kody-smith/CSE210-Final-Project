@@ -20,9 +20,11 @@ namespace _05_jumper
 
        public void StartGame()
         {
+            _display.CreateParachute();
+            _display.printParachute();
             while (_keepPlaying)
             {
-                _display.CreateParachute();
+                
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
@@ -37,12 +39,12 @@ namespace _05_jumper
         public void DoUpdates()
         {
             _display.AddLetter();
-            _display.RemoveLine();
+            // _display.RemoveLife();
         }
 
         public void DoOutputs()
         {
-            _display.DisplayWord();
+            // _display.DisplayWord();
         }
     }
 }
