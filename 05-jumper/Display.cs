@@ -25,13 +25,13 @@ namespace _05_jumper
        }
        public List<string> CreateParachute()
        {
-           _Parachute.Add(" ___ ");
-           _Parachute.Add(@"/___\");
-           _Parachute.Add(@"\   / ");
-           _Parachute.Add(@" \ /");
-           _Parachute.Add("  0  ");
-           _Parachute.Add(@" /|\  ");
-           _Parachute.Add(@" / \ ");
+           _Parachute.Add("  ___ ");
+           _Parachute.Add(@" /___\");
+           _Parachute.Add(@" \   / ");
+           _Parachute.Add(@"  \ /");
+           _Parachute.Add("   0  ");
+           _Parachute.Add(@"  /|\  ");
+           _Parachute.Add(@"  / \ ");
            _Parachute.Add("     ");
            _Parachute.Add("     ");
            _Parachute.Add("^^^^^^^");
