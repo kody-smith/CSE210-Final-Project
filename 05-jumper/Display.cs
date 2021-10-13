@@ -2,11 +2,21 @@ namespace _05_jumper
 {
     class Display
     {
-       public void RemoveLine()
+        public int life = 4;
+        public List<string> _Parachute ;
+
+        // in this function Removelife
+        // the number of life will be reduced if the user input
+        // did not matched with generated words.
+       public int RemoveLife(bool _wordChoice)
        {
-           
+           if (!_wordChoice)
+           {
+               life--;
+           }
+           return life;
        }
-       public void CreateParachute()
+       public List<string> CreateParachute()
        {
            
        }
