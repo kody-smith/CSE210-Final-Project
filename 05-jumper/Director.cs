@@ -6,6 +6,7 @@ namespace _05_jumper
         public Word _word;
         public Player _player;
         public Display _display;
+        public string dashes;
 
         /// <summary>
         /// Initializes the actors of the game.
@@ -21,6 +22,8 @@ namespace _05_jumper
        public void StartGame()
         {
             _display.CreateParachute();
+            _word.ChooseWord();
+            // _display.DisplayWord(dashes);
             _display.printParachute();
             while (_keepPlaying)
             {
