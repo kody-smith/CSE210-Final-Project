@@ -8,6 +8,9 @@ namespace _05_jumper
         public int life = 4;
         public List<string> _Parachute = new List<string>();
         Word _word = new Word();
+        public char letter;
+        public string dashes;
+        public bool _wordChoice;
         
 
         ///<summary>
