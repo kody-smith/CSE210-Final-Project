@@ -93,11 +93,11 @@ namespace _05_jumper
        //AddLetter is responsible for swaping the dash for the letter 
        //in the correct location if guessed correctly
        ///</summary>
-       public string AddLetter(string dashes)
+       public string AddLetter(string dashes, char letter)
        {
-           foreach (char underscore in dashes)
+           foreach (char dash in dashes)
            {
-               
+               Console.WriteLine(dashes.Replace(dash, letter));
            }
            return dashes;
        }
