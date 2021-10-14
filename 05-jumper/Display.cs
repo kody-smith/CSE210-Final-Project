@@ -8,6 +8,9 @@ namespace _05_jumper
         public int life = 4;
         public List<string> _Parachute = new List<string>();
         Word _word = new Word();
+        public char letter;
+        public string dashes;
+        public bool _wordChoice;
         
 
         ///<summary>
@@ -25,13 +28,13 @@ namespace _05_jumper
        }
        public List<string> CreateParachute()
        {
-           _Parachute.Add(" ___ ");
-           _Parachute.Add(@"/___\");
-           _Parachute.Add(@"\   / ");
-           _Parachute.Add(@" \ /");
-           _Parachute.Add("  0  ");
-           _Parachute.Add(@" /|\  ");
-           _Parachute.Add(@" / \ ");
+           _Parachute.Add("  ___ ");
+           _Parachute.Add(@" /___\");
+           _Parachute.Add(@" \   / ");
+           _Parachute.Add(@"  \ /");
+           _Parachute.Add("   0  ");
+           _Parachute.Add(@"  /|\  ");
+           _Parachute.Add(@"  / \ ");
            _Parachute.Add("     ");
            _Parachute.Add("     ");
            _Parachute.Add("^^^^^^^");
@@ -93,9 +96,13 @@ namespace _05_jumper
        //AddLetter is responsible for swaping the dash for the letter 
        //in the correct location if guessed correctly
        ///</summary>
-       public void AddLetter()
+       public string AddLetter(string dashes, char letter)
        {
-        //    foreach (char underscore in ){}
+           foreach (char dash in dashes)
+           {
+               Console.WriteLine(dashes.Replace(dash, letter));
+           }
+           return dashes;
        }
     }
 }

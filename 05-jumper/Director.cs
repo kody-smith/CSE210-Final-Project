@@ -41,8 +41,8 @@ namespace _05_jumper
 
         public void DoUpdates()
         {
-            _display.AddLetter();
-            // _display.RemoveLife();
+            _display.AddLetter(_display.dashes,_display.letter);
+            _display.RemoveLife(_display._wordChoice);
         }
 
         public void DoOutputs()
