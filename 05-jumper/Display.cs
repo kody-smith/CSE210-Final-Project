@@ -93,9 +93,13 @@ namespace _05_jumper
        //AddLetter is responsible for swaping the dash for the letter 
        //in the correct location if guessed correctly
        ///</summary>
-       public void AddLetter()
+       public string AddLetter(string dashes)
        {
-        //    foreach (char underscore in ){}
+           foreach (char underscore in dashes)
+           {
+               
+           }
+           return dashes;
        }
     }
 }
