@@ -7,7 +7,7 @@ namespace _05_jumper
     {
         public int life = 4;
         public List<string> _Parachute = new List<string>();
-        Word _word = new Word();
+        public List<char> _chosenWord = new List<char>();
         public char letter;
         public string dashes;
         public bool _wordChoice;
@@ -84,7 +84,7 @@ namespace _05_jumper
        public string DisplayWord(string dashes)
        {
            dashes = "";
-           foreach (char letter in _word._chosenWord)
+           foreach (char letter in _chosenWord)
            {
                Console.Write('_');
                dashes = Console.ReadLine();
