@@ -1,3 +1,4 @@
+using System;
 namespace _05_jumper
 {
     class Director
@@ -23,7 +24,8 @@ namespace _05_jumper
         {
             _display.CreateParachute();
             _word.ChooseWord();
-            // _display.DisplayWord(dashes);
+            _word.DisplayWord();
+            Console.WriteLine();
             _display.printParachute();
             while (_keepPlaying)
             {
@@ -47,7 +49,7 @@ namespace _05_jumper
 
         public void DoOutputs()
         {
-            // _display.DisplayWord();
+            _word.DisplayWord();
         }
     }
 }

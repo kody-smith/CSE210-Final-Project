@@ -76,22 +76,7 @@ namespace _05_jumper
            }
            return _Parachute;
        }
-       ///<summary>
-       //DisplayWord will check the count of the random word
-       //and print dashed lines to show the user how many letters
-       //are in the word
-       ///</summary>
-       public string DisplayWord(string dashes)
-       {
-           dashes = "";
-           foreach (char letter in _chosenWord)
-           {
-               Console.Write('_');
-               dashes = Console.ReadLine();
-               string dash = letter.ToString();
-           }
-           return dashes;
-       }
+
        ///<summary>
        //AddLetter is responsible for swaping the dash for the letter 
        //in the correct location if guessed correctly

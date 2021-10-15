@@ -3,10 +3,11 @@ namespace _05_jumper
 {
     class Player
     {
-       public void Input()
-       {
-           Console.WriteLine("Guess a letter [a-z]:");
-            string read = Console.ReadLine();
-       }
+        public string _letter;
+        public void Input()
+        {
+            Console.Write("Guess a letter [a-z]:");
+            _letter = Console.ReadLine();
+        }
     }
 }
