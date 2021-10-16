@@ -83,6 +83,8 @@ namespace _05_jumper
            }
            return _Parachute;
        }
+    }
+}
 
        ///<summary>
        //AddLetter is responsible for swaping the dash for the letter 
@@ -98,19 +100,3 @@ namespace _05_jumper
     //    }
     
     //Here is the new function:
-    public string AddLetter(string dashes, string word, string letter)
-    {
-    char letterChar = letter[0]; // get the first character in the string (there should only be one)
-    StringBuilder sbDashes = new StringBuilder(dashes);
-    
-    for (int i = 0; i < word.Length; i++)
-    {
-        if (word[i] == letterChar)
-        {
-        sbDashes[i] = letterChar;
-        }
-    }
-    return sbDashes.ToString();
-    }
-    }
-}

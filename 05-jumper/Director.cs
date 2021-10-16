@@ -43,7 +43,7 @@ namespace _05_jumper
 
         public void DoUpdates()
         {
-            _word.AddLetter(_player.guesses, _word.dashes, _word.letter, _player._letter);
+            _word.AddLetter(_player._guessChar,_player._letter);
             _display.RemoveLife(_display._wordChoice);
         }
 
