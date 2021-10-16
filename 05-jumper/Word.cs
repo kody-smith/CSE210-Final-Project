@@ -6,8 +6,9 @@ namespace _05_jumper
     {
         public char[] _char_array;
         public char letter;
-        public List<string> _dashes = new List<string>();
+        //public List<string> _dashes = new List<string>();
         public string dashes;
+        public char dash;
         public string _chosenWord;
         public string[] _wordArray = {"empyrean", "arapaima", "Guiana", "Burrito", "cheese", "queso", "Montana", "Idaho", "Missouri", "Florida", "President", "Organization", "topaz", "supercalifragilisticexpialidocious", "pound",
                             "water", "jersey", "jabberwocky", "persona", "allegory", "reverence", "temple","subtle","demagogue","transient","arid","desert","pizza","intrepid",
@@ -35,18 +36,13 @@ namespace _05_jumper
        ///</summary>
        public void DisplayWord()
        {
-           _dashes.Clear();
+ 
            foreach (char letter in _chosenWord)
            {
-                _dashes.Add("_");
-                
-                // Console.Write("_");
+                dashes = "_";
+                Console.Write(dashes);
                 // dashes.ToString();
            }
-           for(int i =0; i<_dashes.Count; i++)
-                {
-                    Console.Write("_");
-                }
            
        }
        
@@ -69,13 +65,18 @@ namespace _05_jumper
        //AddLetter is responsible for swaping the dash for the letter 
        //in the correct location if guessed correctly
        ///</summary>
-       public string AddLetter(string dashes, char letter)
+       public void AddLetter(char guesses,string dashes, char letter, string _letter)
        {
-           foreach (char dash in _chosenWord)
+           foreach (char dash in dashes)
            {
-               Console.Write(dashes.Replace(dash, letter));
+               if (guesses == letter){
+               dashes.Replace(dash, guesses);
+               Console.WriteLine(dashes);
+               }
+               else {
+                   _Player._Input();
+               }
            }
-           return dashes;
        }
        ///<summary>
        ///returns bool value.
