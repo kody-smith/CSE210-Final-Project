@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace _05_jumper
 {
@@ -8,9 +9,15 @@ namespace _05_jumper
         public int life = 4;
         public List<string> _Parachute = new List<string>();
         public List<char> _chosenWord = new List<char>();
-        public char letter;
-        public string dashes;
+        // public char letter;
+        // public string dashes;
         public bool _wordChoice;
+        // These three values are to test the new function "AddLetter":
+        public string dashes = "---";
+        public string word = "the";
+        public string letter = "h";
+        
+        
         
 
         ///<summary>
@@ -81,13 +88,29 @@ namespace _05_jumper
        //AddLetter is responsible for swaping the dash for the letter 
        //in the correct location if guessed correctly
        ///</summary>
-       public string AddLetter(string dashes, char letter)
-       {
-           foreach (char dash in dashes)
-           {
-               Console.WriteLine(dashes.Replace(dash, letter));
-           }
-           return dashes;
-       }
+    //    public string AddLetter(string dashes, char letter)
+    //    {
+    //        foreach (char dash in dashes)
+    //        {
+    //            Console.WriteLine(dashes.Replace(dash, letter));
+    //        }
+    //        return dashes;
+    //    }
+    
+    //Here is the new function:
+    public string AddLetter(string dashes, string word, string letter)
+    {
+    char letterChar = letter[0]; // get the first character in the string (there should only be one)
+    StringBuilder sbDashes = new StringBuilder(dashes);
+    
+    for (int i = 0; i < word.Length; i++)
+    {
+        if (word[i] == letterChar)
+        {
+        sbDashes[i] = letterChar;
+        }
+    }
+    return sbDashes.ToString();
+    }
     }
 }

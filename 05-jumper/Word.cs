@@ -39,13 +39,14 @@ namespace _05_jumper
            foreach (char letter in _chosenWord)
            {
                 _dashes.Add("_");
-                for(int i =0; i<_dashes.Count; i++)
-                {
-                    Console.Write("_");
-                }
+                
                 // Console.Write("_");
                 // dashes.ToString();
            }
+           for(int i =0; i<_dashes.Count; i++)
+                {
+                    Console.Write("_");
+                }
            
        }
        

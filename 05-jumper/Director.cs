@@ -7,7 +7,10 @@ namespace _05_jumper
         public Word _word;
         public Player _player;
         public Display _display;
-        public string dashes;
+        //Added the same member variables here to help with the new function.
+        public string dashes = "---";
+        public string word = "the";
+        public string letter = "h";
 
         /// <summary>
         /// Initializes the actors of the game.
@@ -43,7 +46,7 @@ namespace _05_jumper
 
         public void DoUpdates()
         {
-            _display.AddLetter(_display.dashes,_display.letter);
+            _display.AddLetter(dashes, word, letter);
             _display.RemoveLife(_display._wordChoice);
         }
 
