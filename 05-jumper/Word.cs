@@ -22,7 +22,6 @@ namespace _05_jumper
         public void ChooseWord()
        {
            int wordchoice = rnd.Next(0,_wordArray.Length);
-           Console.WriteLine(wordchoice);
            chosenWord = _wordArray[wordchoice];
            Console.WriteLine(chosenWord);
 
