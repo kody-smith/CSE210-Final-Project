@@ -3,10 +3,10 @@ namespace _05_jumper
 {
     class Director
     {
-        public bool _keepPlaying;
-        public Word _word;
-        public Player _player;
-        public Display _display;
+        public bool keepPlaying;
+        public Word word;
+        public Player player;
+        public Display display;
         //Added the same member variables here to help with the new function.
 
         /// <summary>
@@ -14,20 +14,21 @@ namespace _05_jumper
         /// </summary>
         public Director()
         {
-            _keepPlaying = true;
-            _word = new Word();
-            _player = new Player();
-            _display = new Display();
+            keepPlaying = true;
+            player = new Player();
+            display = new Display();
+            word = new Word();
+            
         }
 
        public void StartGame()
         {
-            _display.CreateParachute();
-            _word.ChooseWord();
-            _word.DisplayWord();
+            display.CreateParachute();
+            word.ChooseWord();
+            word.DisplayWord();
             Console.WriteLine();
-            _display.printParachute();
-            while (_keepPlaying)
+            display.printParachute();
+            while (keepPlaying)
             {
                 
                 GetInputs();
@@ -38,18 +39,20 @@ namespace _05_jumper
 
         public void GetInputs()
         {
-            _player.Input();
+            player.Input();
         }
 
         public void DoUpdates()
         {
-            _word.AddLetter(_player._guessChar,_player._letter);
-            _display.RemoveLife(_display._wordChoice);
+            display.printParachute();
+            word.AddLetter(player.guessChar,player.letter);
+            display.changeParachute();
+            display.printParachute();
         }
 
         public void DoOutputs()
         {
-            _word.DisplayWord();
+            word.DisplayWord();
         }
     }
 }

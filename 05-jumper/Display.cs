@@ -7,11 +7,11 @@ namespace _05_jumper
     class Display
     {
         public int life = 4;
-        public List<string> _Parachute = new List<string>();
-        public List<char> _chosenWord = new List<char>();
+        public List<string> parachute = new List<string>();
+        public List<char> chosenWord = new List<char>();
         // public char letter;
         // public string dashes;
-        public bool _wordChoice;
+        public bool wordChoice;
         // These three values are to test the new function "AddLetter":
         public string dashes = "---";
         public string word = "the";
@@ -25,63 +25,72 @@ namespace _05_jumper
         // the number of life will be reduced if the user input
         // did not matched with generated words.
         ///</summary>
-       public int RemoveLife(bool _wordChoice)
+       public int RemoveLife()
        {
-           if (!_wordChoice)
-           {
-               life--;
-           }
-           return life;
+            life--;
+            Console.WriteLine(life);
+            return life;
        }
        public List<string> CreateParachute()
        {
-           _Parachute.Add("  ___ ");
-           _Parachute.Add(@" /___\");
-           _Parachute.Add(@" \   / ");
-           _Parachute.Add(@"  \ /");
-           _Parachute.Add("   0  ");
-           _Parachute.Add(@"  /|\  ");
-           _Parachute.Add(@"  / \ ");
-           _Parachute.Add("     ");
-           _Parachute.Add("     ");
-           _Parachute.Add("^^^^^^^");
+           parachute.Add("  ___ ");
+           parachute.Add(@" /___\");
+           parachute.Add(@" \   / ");
+           parachute.Add(@"  \ /");
+           parachute.Add("   0  ");
+           parachute.Add(@"  /|\  ");
+           parachute.Add(@"  / \ ");
+           parachute.Add("     ");
+           parachute.Add("     ");
+           parachute.Add("^^^^^^^");
 
 
-           return _Parachute;
+           return parachute;
        }
 
        public void printParachute()
        {
-           for(int i = 0; i < _Parachute.Count; i++)
+           for(int i = 0; i < parachute.Count; i++)
            {
-               Console.WriteLine(_Parachute[i]);
+               Console.WriteLine(parachute[i]);
            } 
        }
 
        public List<string> changeParachute()
        {
+        //    CreateParachute();
            if (life == 4)
            {
-               return _Parachute;
+               return parachute;
            }
            else if(life == 3)
            {
-               _Parachute[0] = "     ";
+               parachute[0] = "     ";
+               return parachute;
            }
            else if(life == 2)
-           {
-               _Parachute[1] = "     ";
+           {   
+               parachute[0] = "     ";
+               parachute[1] = "     ";
+               return parachute;
            }
            else if(life == 1)
            {
-               _Parachute[2] = "     ";
+               parachute[0] = "     ";
+               parachute[1] = "     ";
+               parachute[2] = "     ";
+               return parachute;
            }
            else
            {
-               _Parachute[3] = "     ";
-               _Parachute[4] = "  x  ";
+               parachute[0] = "     ";
+               parachute[1] = "     ";
+               parachute[2] = "     ";
+               parachute[3] = "     ";
+               parachute[4] = "  x  ";
+               return parachute;
            }
-           return _Parachute;
+           
        }
     }
 }

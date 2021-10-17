@@ -6,11 +6,13 @@ namespace _05_jumper
     class Word
     {
         //public List<string> _dashes = new List<string>();
-        public string _dashes;
-        public string _chosenWord;
-        public string[] _wordArray = {"empyrean", "arapaima", "Guiana", "Burrito", "cheese", "queso", "Montana", "Idaho", "Missouri", "Florida", "President", "Organization", "topaz", "supercalifragilisticexpialidocious", "pound",
+        public string dashes;
+        public string chosenWord;
+        public bool letterexists = false;
+        public Display display = new Display();
+        public string[] _wordArray = {"empyrean", "arapaima", "guiana", "burrito", "cheese", "queso", "montana", "idaho", "missouri", "florida", "president", "organization", "topaz", "supercalifragilisticexpialidocious", "pound",
                             "water", "jersey", "jabberwocky", "persona", "allegory", "reverence", "temple","subtle","demagogue","transient","arid","desert","pizza","intrepid",
-                            "Extraterrestrial","antidote","beach","agriculture","paradise","armistice","accordion","saxophone","piano","enterprise","Sovereignty","amendment",
+                            "extraterrestrial","antidote","beach","agriculture","paradise","armistice","accordion","saxophone","piano","enterprise","sovereignty","amendment",
                             "lincoln","mercury","sepulchral","nyctophobia","solomon","revelation"};
         Random rnd = new Random();
         ///<summary>
@@ -21,14 +23,14 @@ namespace _05_jumper
        {
            int wordchoice = rnd.Next(0,_wordArray.Length);
            Console.WriteLine(wordchoice);
-           _chosenWord = _wordArray[wordchoice];
-           Console.WriteLine(_chosenWord);
+           chosenWord = _wordArray[wordchoice];
+           Console.WriteLine(chosenWord);
 
            StringBuilder sb = new StringBuilder();
-           for (int i=0;i<_chosenWord.Length;i++){
+           for (int i=0;i<chosenWord.Length;i++){
                sb.Append("_");
            }
-           _dashes = sb.ToString();
+           dashes = sb.ToString();
        }
 
        ///<summary>
@@ -38,7 +40,7 @@ namespace _05_jumper
        ///</summary>
        public void DisplayWord()
        {
-           Console.WriteLine(_dashes);
+           Console.WriteLine(dashes);
        }
        
         ///<summary>
@@ -62,14 +64,25 @@ namespace _05_jumper
        ///</summary>
        public void AddLetter(char guessChar,string guessString)
        {
-           StringBuilder sb = new StringBuilder(_dashes);
-           for (int i=0;i < _chosenWord.Length;i++){
-               char letter = _chosenWord[i];
-               if (guessChar == letter) {
-                   sb[i] = guessChar;
-               }
-           }
-           _dashes = sb.ToString();
+           letterexists = false;
+           char letter;
+           StringBuilder sb = new StringBuilder(dashes);
+           for (int i=0;i < chosenWord.Length;i++)
+            {
+               letter = chosenWord[i];
+               if (guessChar == letter) 
+                {
+                    letterexists = true;
+                    sb[i] = guessChar;
+                    break;
+                }
+            }   
+            if (letterexists == false){
+                    display.RemoveLife();
+                    display.changeParachute();
+                }
+            
+           dashes = sb.ToString();
         }
        ///<summary>
        ///returns bool value.
@@ -78,7 +91,7 @@ namespace _05_jumper
     //    {
     //        if()
     //        {
-
+    //              
     //        }
     //        else
     //        {
