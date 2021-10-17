@@ -16,3 +16,5 @@ Player:
 Word:
     ChooseWord
     CompareWord
+
+Repo: https://github.com/NicholasBoss/cse210-student-csharp-team-challenges
