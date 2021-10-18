@@ -45,13 +45,19 @@ namespace _05_jumper
         public void DoUpdates()
         {
             display.printParachute();
-            word.AddLetter(player.guessChar,player.letter);
-            display.changeParachute();
-            display.printParachute();
+            bool letterExists = word.AddLetter(player.guessChar,player.letter);
+
+            if (!letterExists)
+            {
+                // we did not find a match, change the parachute
+                display.RemoveLife();
+                display.changeParachute();
+            }            
         }
 
         public void DoOutputs()
         {
+            display.printParachute();
             word.DisplayWord();
         }
     }

@@ -9,7 +9,6 @@ namespace _05_jumper
         public string dashes;
         public string chosenWord;
         public bool letterexists = false;
-        public Display display = new Display();
         public string[] _wordArray = {"empyrean", "arapaima", "guiana", "burrito", "cheese", "queso", "montana", "idaho", "missouri", "florida", "president", "organization", "topaz", "supercalifragilisticexpialidocious", "pound",
                             "water", "jersey", "jabberwocky", "persona", "allegory", "reverence", "temple","subtle","demagogue","transient","arid","desert","pizza","intrepid",
                             "extraterrestrial","antidote","beach","agriculture","paradise","armistice","accordion","saxophone","piano","enterprise","sovereignty","amendment",
@@ -26,7 +25,7 @@ namespace _05_jumper
            Console.WriteLine(chosenWord);
 
            StringBuilder sb = new StringBuilder();
-           for (int i=0;i<chosenWord.Length;i++){
+           for (int i = 0; i < chosenWord.Length; i++){
                sb.Append("_");
            }
            dashes = sb.ToString();
@@ -42,61 +41,32 @@ namespace _05_jumper
            Console.WriteLine(dashes);
        }
        
-        ///<summary>
-       // public datetype DisplayWord()
-       // {
-        //  foreach (char word in _choseWord)
-        //      {
-            //      List<string> Word = new List<string>();
-        //          Word.Add(word);
-        //          string dash 
-        //}
-
-       //}
-       ///</summary>
-
-
-
        ///<summary>
-       //AddLetter is responsible for swaping the dash for the letter 
-       //in the correct location if guessed correctly
+       /// AddLetter is responsible for swaping the dash for the letter 
+       /// in the correct location if guessed correctly.
+       ///
+       /// When this is done, it will return true if the letter
+       /// existed and false if it did not exist in the word.
        ///</summary>
-       public void AddLetter(char guessChar,string guessString)
+       public bool AddLetter(char guessChar, string guessString)
        {
            letterexists = false;
-           char letter;
            StringBuilder sb = new StringBuilder(dashes);
+
            for (int i=0;i < chosenWord.Length;i++)
             {
-               letter = chosenWord[i];
+               char letter = chosenWord[i];
                if (guessChar == letter) 
                 {
                     letterexists = true;
                     sb[i] = guessChar;
-                    break;
                 }
             }   
-            if (letterexists == false){
-                    display.RemoveLife();
-                    display.changeParachute();
-                }
-            
-           dashes = sb.ToString();
+
+            dashes = sb.ToString();
+
+            return letterexists;
         }
-       ///<summary>
-       ///returns bool value.
-       ///</summary>
-    //    public void CompareWord()
-    //    {
-    //        if()
-    //        {
-    //              
-    //        }
-    //        else
-    //        {
-               
-    //        }
-        
-    //    }
+
     }
 }
