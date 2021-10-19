@@ -67,6 +67,16 @@ namespace _05_jumper
 
             return letterexists;
         }
-
+        public bool KeepContinue()
+        {
+            if(chosenWord == dashes)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
