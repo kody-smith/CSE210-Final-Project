@@ -7,6 +7,7 @@ namespace _05_jumper
     {
         //public List<string> _dashes = new List<string>();
         public string dashes;
+        public Director director;
         public string chosenWord;
         public bool letterexists = false;
         public string[] _wordArray = {"empyrean", "arapaima", "guiana", "burrito", "cheese", "queso", "montana", "idaho", "missouri", "florida", "president", "organization", "topaz", "supercalifragilisticexpialidocious", "pound",
@@ -78,5 +79,7 @@ namespace _05_jumper
                 return true;
             }
         }
+
+      
     }
 }
