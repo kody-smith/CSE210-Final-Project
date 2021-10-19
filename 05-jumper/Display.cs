@@ -8,6 +8,7 @@ namespace _05_jumper
     {
         public int life = 4;
         public List<string> parachute = new List<string>();
+        public Director director;
         public List<char> chosenWord = new List<char>();
         // public char letter;
         // public string dashes;
@@ -92,6 +93,7 @@ namespace _05_jumper
            }
            
        }
+     
     }
 }
 

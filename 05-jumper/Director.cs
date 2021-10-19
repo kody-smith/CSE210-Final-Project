@@ -30,7 +30,6 @@ namespace _05_jumper
             display.printParachute();
             while (keepPlaying)
             {
-                
                 GetInputs();
                 DoUpdates();
                 DoOutputs();
@@ -59,6 +58,21 @@ namespace _05_jumper
         {
             display.printParachute();
             word.DisplayWord();
+
+            if(!word.KeepContinue() || display.life == 0)
+            {
+                keepPlaying = false;
+                if(!word.KeepContinue())
+                {
+                    Console.WriteLine("Congratlation!! You win!!");
+                }else if (display.life == 0)
+                {
+                    Console.WriteLine("You lose...");
+                }
+            }
         }
+
+
+
     }
 }
