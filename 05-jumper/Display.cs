@@ -97,17 +97,4 @@ namespace _05_jumper
     }
 }
 
-       ///<summary>
-       //AddLetter is responsible for swaping the dash for the letter 
-       //in the correct location if guessed correctly
-       ///</summary>
-    //    public string AddLetter(string dashes, char letter)
-    //    {
-    //        foreach (char dash in dashes)
-    //        {
-    //            Console.WriteLine(dashes.Replace(dash, letter));
-    //        }
-    //        return dashes;
-    //    }
-    
-    //Here is the new function:
+      

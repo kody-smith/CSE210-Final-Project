@@ -23,7 +23,6 @@ namespace _05_jumper
        {
            int wordchoice = rnd.Next(0,_wordArray.Length);
            chosenWord = _wordArray[wordchoice];
-           Console.WriteLine(chosenWord);
 
            StringBuilder sb = new StringBuilder();
            for (int i = 0; i < chosenWord.Length; i++){
