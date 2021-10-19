@@ -12,7 +12,7 @@ namespace _06_nim
     class Player
     {
         private string _name;
-        private Guess _move;
+        private Guess _guess;
 
         /// <summary>
         /// Initializes a new player with the provided name.
@@ -28,14 +28,14 @@ namespace _06_nim
             return _name;
         }
 
-        public void SetMove(Guess move)
+        public void SetGuess(Guess guess)
         {
-            _move = move;
+            _guess = guess;
         }
 
-        public Guess GetMove()
+        public Guess GetGuess()
         {
-            return _move;
+            return _guess;
         }
     }
 }
