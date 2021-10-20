@@ -4,10 +4,13 @@ namespace _06_mastermind
 {
     class Director
     {
+        private Board _board = new Board();
         private UserService _userService = new UserService();
         private Roster _roster = new Roster();
+        private Code _code = new Code();
         private bool _keepPlaying = true;
-          /// <summary>
+
+        /// <summary>
         /// This method starts the game and continues running until it is finished.
         /// </summary>
         public void StartGame()
@@ -34,11 +37,30 @@ namespace _06_mastermind
                 Player player = new Player(name);
                 _roster.AddPlayer(player);
             }
+            _code.GenerateCode();
         }
 
+
+        ///<summary>
+        /// Get all needed input from player.
+        ///</summary>
         private void GetInputs()
         {
+            Player currentPlayer = _roster.GetCurrentPlayer();
+            // Display Players and the initial inputs from code (e.g PLAYERNAME: ----, ****)
+            string board = _board.ToString();
+            _userService.DisplayText(board);
+            
+            // Console.WriteLine($"{currentPlayer}: {_guess.GetGuess(playerguess)}, {_code.GenerateHint()}");
+            // string hidden = _code.GenerateHint();
+            
+            // Get next player's guess
+            _userService.DisplayText($"{currentPlayer.GetName()}'s turn:");
+            int playerguess = _userService.GetNumberInput("What is your guess?: ");
 
+            // set values here for the guess
+
+            // Set the overall guess for the player
         }
 
         private void DoUpdates()

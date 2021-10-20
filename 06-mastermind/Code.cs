@@ -12,17 +12,17 @@ namespace _06_mastermind
         {
             Random rnd = new Random();
             int code = rnd.Next(1000,10000);
-            _code = code.ToString();
-            return _code;
+            string newcode = code.ToString();
+            return newcode;
         }
 
-        public string GenerateString()
+        public string GenerateHint()
         {
             StringBuilder sb = new StringBuilder();
             string x;
             foreach (char i in _code)
             {
-                sb.Append('x');
+                sb.Append('*');
             }
             x = sb.ToString();
             return x;

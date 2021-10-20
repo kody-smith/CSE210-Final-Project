@@ -10,22 +10,22 @@ namespace _06_mastermind
     /// </summary>
     class Guess
     {
-        private int _stones;
+        private int _guess;
 
         /// <summary>
-        /// Initializes the move with the provided number of
-        /// stones and pile to remove them from.
+        /// Initializes the move with the provided guess.
         /// </summary>
-        /// <param name="stones">The amount of stones to remove</param>
-        /// <param name="pile">The pile to remove them from</param>
-        public Guess(int stones)
+        public Guess(int guess)
         {
-            _stones = stones;
+            _guess = guess;
         }
 
-        public int GetStones()
+        /// <summary>
+        /// Returns the provided guess.
+        /// </summary>
+        public int GetGuess()
         {
-            return _stones;
+            return _guess;
         }
 
     }
