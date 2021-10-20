@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace _06_nim
+namespace _06_mastermind
 {
     /// <summary>
     /// Keeps track of all the players in the game. Provides a way

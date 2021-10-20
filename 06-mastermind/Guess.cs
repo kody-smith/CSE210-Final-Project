@@ -1,6 +1,6 @@
 using System;
 
-namespace _06_nim
+namespace _06_mastermind
 {
     /// <summary>
     /// Contains the pile and the number of stones for a given move.

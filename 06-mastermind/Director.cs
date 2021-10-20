@@ -4,7 +4,8 @@ namespace _06_mastermind
 {
     class Director
     {
-
+        private UserService _userService = new UserService();
+        private Roster _roster = new Roster();
         private bool _keepPlaying = true;
           /// <summary>
         /// This method starts the game and continues running until it is finished.

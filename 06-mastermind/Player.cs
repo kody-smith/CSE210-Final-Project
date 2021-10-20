@@ -1,6 +1,6 @@
 using System;
 
-namespace _06_nim
+namespace _06_mastermind
 {
     /// <summary>
     /// Represents a person taking part in the game. This course keeps track
