@@ -13,7 +13,7 @@ namespace _06_mastermind
     class Roster
     {
         private int _currentPlayerIndex = 0;
-        private List<Player> _players = new List<Player>();
+        public List<Player> _players = new List<Player>();
 
         /// <summary>
         /// Adds a new player to the game.

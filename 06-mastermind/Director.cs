@@ -8,6 +8,7 @@ namespace _06_mastermind
         private UserService _userService = new UserService();
         private Roster _roster = new Roster();
         private Code _code = new Code();
+        private Guess _guess = new Guess();
         private bool _keepPlaying = true;
 
         /// <summary>
@@ -48,10 +49,14 @@ namespace _06_mastermind
         {
             Player currentPlayer = _roster.GetCurrentPlayer();
             // Display Players and the initial inputs from code (e.g PLAYERNAME: ----, ****)
-            string board = _board.ToString();
-            _userService.DisplayText(board);
+            // string board = _board.ToString();
+            // _userService.DisplayText(board);
+        
+            string CurrentPlayer = currentPlayer.GetName();
+            string hint = _code.GenerateHint();
+            string guess = _guess.GetGuess().ToString();
             
-            // Console.WriteLine($"{currentPlayer}: {_guess.GetGuess(playerguess)}, {_code.GenerateHint()}");
+            Console.WriteLine($"{CurrentPlayer}: {guess}, {hint}");
             // string hidden = _code.GenerateHint();
             
             // Get next player's guess
@@ -65,7 +70,7 @@ namespace _06_mastermind
 
         private void DoUpdates()
         {
-
+            _roster.AdvanceNextPlayer();
         }
 
         private void DoOutputs()

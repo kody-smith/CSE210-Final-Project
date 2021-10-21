@@ -11,11 +11,10 @@ namespace _06_mastermind
     class Guess
     {
         private int _guess;
-
         /// <summary>
         /// Initializes the move with the provided guess.
         /// </summary>
-        public Guess(int guess)
+        public void SetGuess(int guess)
         {
             _guess = guess;
         }
@@ -23,9 +22,25 @@ namespace _06_mastermind
         /// <summary>
         /// Returns the provided guess.
         /// </summary>
-        public int GetGuess()
+        public string GetGuess()
         {
-            return _guess;
+            Code _code = new Code();
+            string code = _code.GetCode();
+            string dashes = "";
+            if (_guess == 0)
+            {
+                foreach(int i in code)
+                {
+                    dashes += "-";
+                }
+                return dashes;
+            }
+            else
+            {
+                return _guess.ToString();
+            }
+            
+            
         }
 
     }

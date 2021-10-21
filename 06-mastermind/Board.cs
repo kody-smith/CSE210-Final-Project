@@ -14,6 +14,14 @@ namespace _06_mastermind
     {
         // TODO: Declare any member variables here.
         List<int> _piles = new List<int>();
+        private static int guess;
+        private static string name = "";
+        private Player _player = new Player(name);
+        private UserService _userService = new UserService();
+        private Guess _guess = new Guess();
+        private Code _code = new Code();
+
+        
         /// <summary>
         /// Initialize the Board
         /// </summary>
@@ -52,12 +60,7 @@ namespace _06_mastermind
         /// <param name="move">Contains the pile and the number of stones</param>
         public void Apply(Guess guess)
         {
-            int stones = move.GetStones();
-            int pile = move.GetPile();
-
-            int newAmount = _piles[pile] - stones;
-
-            _piles[pile] = Math.Max(0, newAmount);
+            
         }
 
         /// <summary>
@@ -81,52 +84,18 @@ namespace _06_mastermind
         }
 
         /// <summary>
-        /// Get's a string representation of the board in the format:
-        /// 
-        /// --------------------
-        /// 0: O O O O O O 
-        /// 1: O O O O O O O
-        /// 2: O O O O O O O O 
-        /// 3: O O O O 
-        /// --------------------
+        /// Get's a string representation of the board in the format
         /// </summary>
         /// <returns>The string representation.</returns>
-        public override string ToString()
-        {
-            string text = "\n---------------------\n";
+        // public override string ToString()
+        // {
+        //     _userService.DisplayText($"{_player.GetName()}'s turn:");
+        //     int playerguess = _userService.GetNumberInput("What is your guess?: ");
             
-            for (int i = 0; i < _piles.Count; i++)
-            {
-                text += GetTextForPile(i, _piles[i]);
-            }
-            text += "---------------------\n";
+        //     Console.WriteLine($"{_guess.GetGuess(playerguess)}");
+        //     string hidden = _code.GenerateHint();
 
-            return text;
-        }
-
-        /// <summary>
-        /// A helper function that is used by the general ToString method.
-        /// This one gets the text for a specific pile in the format:
-        /// 
-        /// 2: O O O O O O O O 
-        /// 
-        /// </summary>
-        /// <param name="pileNumber">The pile number to display at the front of the line.</param>
-        /// <param name="stones">The number of stones in the pile</param>
-        /// <returns></returns>
-        private string GetTextForPile(int pileNumber, int stones)
-        {
-            string text = $"{pileNumber}: ";
-            
-            for (int i = 0; i <= stones; i++)
-            {
-                text += "O ";
-            }
-            text += "\n";
-
-            return text;
-            
-            
-        }
+        //     return hidden;
+        // }
     }
 }
