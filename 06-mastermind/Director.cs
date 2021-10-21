@@ -4,7 +4,6 @@ namespace _06_mastermind
 {
     class Director
     {
-        private Board _board = new Board();
         private UserService _userService = new UserService();
         private Roster _roster = new Roster();
         private Code _code = new Code();

@@ -8,10 +8,12 @@ namespace _06_mastermind
     {
         // TODO: Put important variables right here
         private Code Code = new Code();
-
         public void GenerateHint()
         {
             string hintStart = Code.GenerateCode();
+            
+            // string hintOutput = ProcessHint(hintStart, );
+            // return
         }
         // if exact then place "x". If correct, but not right spot, place "o". If totally wrong, place "*".
 

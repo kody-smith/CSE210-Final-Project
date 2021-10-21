@@ -6,28 +6,28 @@ namespace _06_mastermind
 {
     class Code
     {
-        private string _code;
+        private string code;
 
         public string GenerateCode()
         {
             Random rnd = new Random();
-            int code = rnd.Next(1000,10000);
-            string newcode = code.ToString();
+            int codeInt = rnd.Next(1000,10000);
+            string newcode = codeInt.ToString();
             Console.WriteLine(newcode);
-            _code = newcode;
-            return newcode;
+            code = newcode;
+            return code;
         }
 
         public string GetCode()
         {
-            return _code;
+            return code;
         }
 
         public string GenerateHint()
         {
             StringBuilder sb = new StringBuilder();
             string x;
-            foreach (char i in _code)
+            foreach (char i in code)
             {
                 sb.Append('*');
             }
