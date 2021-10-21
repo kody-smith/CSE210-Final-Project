@@ -15,15 +15,19 @@ namespace _06_mastermind
         }
         // if exact then place "x". If correct, but not right spot, place "o". If totally wrong, place "*".
 
+
+        /// <summary>
+        /// The ProcessHint() function throws out a hint for the current guess to the code.
+        /// It does this through using one Stringbuilder Variable, 
         private void ProcessHint(string originalCode, string guessedCode)
         {
             StringBuilder sb = new StringBuilder();
-            List<string> wordList = new List<string>();
+            List<string> guessedWord = new List<string>();
             List<string> actualCode = new List<string>();
             List<string> hint = new List<string>();
             foreach(char letter in guessedCode)
             {
-                wordList.Add(letter.ToString());
+                guessedWord.Add(letter.ToString());
             }
             foreach(char letter in originalCode)
             {
@@ -31,34 +35,24 @@ namespace _06_mastermind
             }
             for (int u = 0; u <= 4; u++)
             {
+                actualCode[u] = "*";
                 for (int i = 0; i <= 4; i++)
                 {
-                    // if()
-                    // {
-
-                    // }
+                    if(guessedWord[u] == actualCode[i])
+                    {
+                        hint[u] = "o";
+                    }
                 }
-                if (wordList[u] == actualCode[u])
+                if (guessedWord[u] == actualCode[u])
                 {
                     hint[u] = "x";
                 }
             }
-            /*
-            int u = 0;
-            
-            
-            foreach (char letter in codeToCompare)
+            for (int a = 0; a <= 4; a++)
             {
-                wordList.Add(letter.ToString());
+                sb.Append(hint[a]);
             }
-            
-            foreach(char letter in codeToCompare)
-            {
-                if (letter = wordList[u])
-                {
-
-                }
-            }*/
+            // return sb.ToString();
         }
     }
 }
