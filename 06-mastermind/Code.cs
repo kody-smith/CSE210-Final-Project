@@ -11,8 +11,7 @@ namespace _06_mastermind
         public void GenerateCode()
         {
             Random rnd = new Random();
-            // int code = rnd.Next(1000,10000);
-            int code = 1354;
+            int code = rnd.Next(1000,10000);
             string newcode = code.ToString();
             Console.WriteLine(newcode);
             _code = newcode;
