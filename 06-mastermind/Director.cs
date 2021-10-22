@@ -77,8 +77,8 @@ namespace _06_mastermind
 
         private void DoUpdates()
         {
-            //Generate Hint
-
+            //Add win condition
+            
             _roster.AdvanceNextPlayer();
         }
 
@@ -86,15 +86,11 @@ namespace _06_mastermind
         {
             Guess g = new Guess();
             Console.WriteLine("-----------");
-            //Go through each player in the roster, print name, guess, and hint
+            //Goes through each player in the roster, print name, guess, and hint
             foreach (Player p in _roster.GetPlayerList())
             {
-                Console.WriteLine($"{p.GetName()}: {p.GetGuess().GetGuess()}, {_code.ProcessHint(p.GetGuess().GetGuess())}");
-                //Option 1: Generate hint using current guess and code
-                
-
+                Console.WriteLine($"{p.GetName()}: {p.GetGuess().GetGuess()}, {_code.ProcessHint(p.GetGuess().GetGuess())}");             
             }
-            
             Console.WriteLine("-----------");
 
         }
