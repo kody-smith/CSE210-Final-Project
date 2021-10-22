@@ -10,7 +10,7 @@ namespace _06_mastermind
         private Code Code = new Code();
         public void GenerateHint()
         {
-            string hintStart = Code.GenerateCode();
+            // string hintStart = Code.GenerateCode();
             
             // string hintOutput = ProcessHint(hintStart, );
             // return

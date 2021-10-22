@@ -13,7 +13,7 @@ namespace _06_mastermind
     class Roster
     {
         private int _currentPlayerIndex = 0;
-        public List<Player> _players = new List<Player>();
+        private List<Player> _players = new List<Player>();
 
         /// <summary>
         /// Adds a new player to the game.
@@ -39,6 +39,9 @@ namespace _06_mastermind
         public void AdvanceNextPlayer()
         {
             _currentPlayerIndex = (_currentPlayerIndex + 1) % _players.Count;
+        }
+        public List<Player> GetPlayerList(){
+            return _players;
         }
     }
 }

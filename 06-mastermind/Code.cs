@@ -8,14 +8,13 @@ namespace _06_mastermind
     {
         private string code;
 
-        public string GenerateCode()
+        public void GenerateCode()
         {
             Random rnd = new Random();
             int codeInt = rnd.Next(1000,10000);
             string newcode = codeInt.ToString();
             Console.WriteLine(newcode);
             code = newcode;
-            return code;
         }
 
         public string GetCode()

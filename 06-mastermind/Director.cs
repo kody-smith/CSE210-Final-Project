@@ -7,7 +7,7 @@ namespace _06_mastermind
         private UserService _userService = new UserService();
         private Roster _roster = new Roster();
         private Code _code = new Code();
-        private Guess _guess = new Guess();
+        private Guess g = new Guess();
         private bool _keepPlaying = true;
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace _06_mastermind
             // _userService.DisplayText(board);
         
             string CurrentPlayer = currentPlayer.GetName();
-            string hint = _code.GenerateHint();
-            string guess = _guess.GetGuess().ToString();
+            // string hint = _code.GenerateHint();
+            // string guess = _guess.GetGuess().ToString();
             
-            Console.WriteLine($"{CurrentPlayer}: {guess}, {hint}");
+            // Console.WriteLine($"{CurrentPlayer}: {guess}, {hint}");
             // string hidden = _code.GenerateHint();
             
             // Get next player's guess
@@ -63,17 +63,36 @@ namespace _06_mastermind
             int playerguess = _userService.GetNumberInput("What is your guess?: ");
 
             // set values here for the guess
+            // Set guess for current player
+
 
             // Set the overall guess for the player
         }
 
         private void DoUpdates()
         {
+            //Generate hint 
+
             _roster.AdvanceNextPlayer();
         }
 
         private void DoOutputs()
         {
+            
+            Console.WriteLine("-----------");
+            //Go through each player in the roster, print name, guess, and hint
+            foreach (Player p in _roster.GetPlayerList())
+            {
+                Console.WriteLine(p.GetName());
+                //Get current guess from current user
+                //Print guess
+                //Option 1: Generate hint using current guess and code
+                //Option 2: Get hint from the current player or the current players guess depending on where it was saved
+
+            }
+            
+
+            Console.WriteLine("-----------");
 
         }
     }
