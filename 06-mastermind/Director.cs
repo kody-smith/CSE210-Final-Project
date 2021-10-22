@@ -77,8 +77,8 @@ namespace _06_mastermind
 
         private void DoUpdates()
         {
-            //Add win condition
-            
+            //Add win condition to check if current player has won. If not, then advance to the next player
+
             _roster.AdvanceNextPlayer();
         }
 
