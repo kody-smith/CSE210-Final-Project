@@ -28,7 +28,12 @@ namespace _06_mastermind
         /// </summary>
         private void PrepareGame()
         {
-            
+            Console.WriteLine("Welcome to Mastermind!");
+            Console.WriteLine("Here you will guess a four digit code between 1000 and 9999.");
+            Console.WriteLine("After each guess, you will be given a hint to help you guess the secret code."); 
+            Console.WriteLine("The format of the board is as follows: 'PlayerName': 'Your current guess', 'hint based on your guess'"); 
+            Console.WriteLine();
+
             string dash = "----";
             for (int i = 0; i < 2; i++)
             {
