@@ -3,7 +3,7 @@ using System;
 namespace _06_mastermind
 {
     /// <summary>
-    /// Contains the pile and the number of stones for a given move.
+    /// Contains the guess that each player makes.
     /// 
     /// Stereotype:
     ///     Information Holder
