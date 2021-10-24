@@ -7,8 +7,8 @@ namespace _06_mastermind
         private UserService _userService = new UserService();
         private Roster _roster = new Roster();
         private Code _code = new Code();
+        private Guess _guess = new Guess();
         private bool _keepPlaying = true;
-
         /// <summary>
         /// This method starts the game and continues running until it is finished.
         /// </summary>
@@ -84,15 +84,34 @@ namespace _06_mastermind
 
         private void DoOutputs()
         {
-            Guess g = new Guess();
             Console.WriteLine("-----------");
             //Goes through each player in the roster, print name, guess, and hint
             foreach (Player p in _roster.GetPlayerList())
             {
-                Console.WriteLine($"{p.GetName()}: {p.GetGuess().GetGuess()}, {_code.ProcessHint(p.GetGuess().GetGuess())}");             
+                Console.WriteLine($"{p.GetName()}: {p.GetGuess().GetGuess()}, {_code.ProcessHint(p.GetGuess().GetGuess())}");   
+                WhoWin();
             }
             Console.WriteLine("-----------");
 
+            
+            
+
+            if(WhoWin())
+            {
+                Player currentPlayer = _roster.GetCurrentPlayer();
+                string CurrentPlayer = currentPlayer.GetName();
+                _keepPlaying = false;
+                Console.WriteLine($"{currentPlayer} won!");
+            }
+
+         
+            
+        }
+        private bool WhoWin()
+        {
+            string currentGuess = _guess.GetGuess();
+            string correctCode = _code.GetCode();
+            return currentGuess == correctCode;  
         }
     }
 }
