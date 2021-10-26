@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Raylib_cs;
 
-namespace _07_snake
+namespace _07_speed
 {
     /// <summary>
     /// The director is responsible to direct the game, including to keep track of all
@@ -20,9 +20,9 @@ namespace _07_snake
 
         // TODO: Add this line back in when the Food class
         // is ready
-        Food _food = new Food();
+        // Food _food = new Food();
 
-        Snake _snake = new Snake();
+        Word _word = new Word();
         ScoreBoard _scoreBoard = new ScoreBoard();
 
         /// <summary>
@@ -62,19 +62,19 @@ namespace _07_snake
         {
             if (_inputService.IsLeftPressed())
             {
-                _snake.TurnHead(new Point(-1, 0));
+                // _snake.TurnHead(new Point(-1, 0));
             }
             else if (_inputService.IsRightPressed())
             {
-                _snake.TurnHead(new Point(1, 0));
+                // _snake.TurnHead(new Point(1, 0));
             }
             else if (_inputService.IsUpPressed())
             {
-                _snake.TurnHead(new Point(0, -1));
+                // _snake.TurnHead(new Point(0, -1));
             }
             else if (_inputService.IsDownPressed())
             {
-                _snake.TurnHead(new Point(0, 1));
+                // _snake.TurnHead(new Point(0, 1));
             }
         }
 
@@ -83,7 +83,7 @@ namespace _07_snake
         /// </summary>
         private void DoUpdates()
         {
-            _snake.Move();
+            // _snake.Move();
 
             HandleFoodCollision();
             HandleBodyCollision();
@@ -99,9 +99,9 @@ namespace _07_snake
             _outputService.DrawActor(_scoreBoard);
 
             // TODO: Add this back in when the food class is complete.
-            _outputService.DrawActor(_food);
+            // _outputService.DrawActor(_food);
             
-            _outputService.DrawActors(_snake.GetAllSegments());
+            // _outputService.DrawActors(_snake.GetAllSegments());
 
             _outputService.EndDrawing();
         }
@@ -112,19 +112,19 @@ namespace _07_snake
         /// </summary>
         private void HandleBodyCollision()
         {
-            Actor head = _snake.GetHead();
+            // Actor head = _snake.GetHead();
 
-            List<Actor> segments = _snake.GetCollidableSegments();
+            // List<Actor> segments = _snake.GetCollidableSegments();
 
-            foreach(Actor segment in segments)
-            {
-                if (IsCollision(head, segment))
-                {
-                    // There is a collision
-                    _keepPlaying = false;
-                    break;
-                }
-            }
+            // foreach(Actor segment in segments)
+            // {
+            //     if (IsCollision(head, segment))
+            //     {
+            //         // There is a collision
+            //         _keepPlaying = false;
+            //         break;
+            //     }
+            // }
         }
 
         /// <summary>
@@ -136,16 +136,16 @@ namespace _07_snake
             // TODO: Add this code back in when
             // the food class is complete.
 
-            Actor head = _snake.GetHead();
+            // Actor head = _snake.GetHead();
             
-            if (IsCollision(head, _food))
-            {
-                int points = _food.GetPoints();
+            // if (IsCollision(head, _food))
+            // {
+            //     int points = _food.GetPoints();
 
-                _snake.GrowTail(points);
-                _scoreBoard.AddPoints(points);
-                _food.Reset();
-            }
+            //     _snake.GrowTail(points);
+            //     _scoreBoard.AddPoints(points);
+            //     _food.Reset();
+            // }
         }
 
         /// <summary>
