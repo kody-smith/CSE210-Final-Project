@@ -38,7 +38,7 @@ namespace _07_speed
                 DoUpdates();
                 DoOutputs();
 
-                if (_inputService.IsWindowClosing())
+                if (_inputService.IsWindowClosing() || _inputService.IsEscapePressed())
                 {
                     _keepPlaying = false;
                 }

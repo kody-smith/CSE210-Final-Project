@@ -14,10 +14,6 @@ namespace _07_speed
 
         }
 
-        public int GetKeyPressed() 
-        {
-            return Raylib.GetKeyPressed();
-        }
 
         public bool IsEscapePressed()
         {
