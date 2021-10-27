@@ -2,11 +2,15 @@ using System;
 using System.Collections.Generic;
 namespace _07_speed
 {
-    // TODO: Define the Food class here.
+    // Define the Word class here.
     class Word : Actor
     {
-        private int _points;
-        
+        private string _words;
+
+        public string[] _wordArray = {"empyrean", "arapaima", "guiana", "burrito", "cheese", "queso", "montana", "idaho", "missouri", "florida", "president", "organization", "topaz", "supercalifragilisticexpialidocious", "pound",
+            "water", "jersey", "jabberwocky", "persona", "allegory", "reverence", "temple","subtle","demagogue","transient","arid","desert","pizza","intrepid",
+            "extraterrestrial","antidote","beach","agriculture","paradise","armistice","accordion","saxophone","piano","enterprise","sovereignty","amendment",
+            "lincoln","mercury","sepulchral","nyctophobia","solomon","revelation"};
 
         public Word()
         {
@@ -14,21 +18,22 @@ namespace _07_speed
 
         }
 
-        public void SetPoints(int points)
+        public void SetPoints(string words)
         {
             
-            _points = points;
+            _words = words;
         }
-        public int GetPoints()
+        public string GetPoints()
         {
-            return _points;
+            return _words;
         }
 
         public void Reset()
         {
             Random rnd = new Random();
-            _points = rnd.Next(1,11);
-            _text = _points.ToString();
+            int wordchoice = rnd.Next(0,_wordArray.Length);
+            _words = _wordArray[wordchoice];
+            _text = _words.ToString();
             int x = rnd.Next(0,Constants.MAX_X);
             int y = rnd.Next(0,Constants.MAX_Y);
             _position = new Point(x, y);
