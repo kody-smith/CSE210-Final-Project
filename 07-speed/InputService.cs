@@ -8,28 +8,22 @@ namespace _07_speed
     /// </summary>
     public class InputService
     {
+        KeyboardKey _KeyboardKey = new KeyboardKey();
         public InputService()
         {
 
         }
 
-        public bool IsLeftPressed()
+        public bool IsAPressed()
         {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_LEFT);
+            return Raylib.IsKeyDown(KeyboardKey.KEY_A);
         }
 
-        public bool IsRightPressed()
+        public bool IsEscapePressed()
         {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_RIGHT);
+            return Raylib.IsKeyDown(KeyboardKey.KEY_ESCAPE);
         }
-        public bool IsUpPressed()
-        {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_UP);
-        }
-        public bool IsDownPressed()
-        {
-            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_DOWN);
-        }
+
         
         /// <summary>
         /// Returns true if the user has attempted to close the window.
