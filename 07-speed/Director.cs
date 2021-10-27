@@ -60,7 +60,6 @@ namespace _07_speed
         /// </summary>
         private void GetInputs()
         {
-            Raylib.IsKeyDown(KeyboardKey);
           
         }
 
@@ -84,83 +83,7 @@ namespace _07_speed
         {
             _outputService.StartDrawing();
 
-            _outputService.DrawActor(_scoreBoard);
-
-            // TODO: Add this back in when the food class is complete.
-            // _outputService.DrawActor(_food);
-            
-            // _outputService.DrawActors(_snake.GetAllSegments());
-
             _outputService.EndDrawing();
-        }
-
-        /// <summary>
-        /// Looks for and handles collisions between the snake's head
-        /// and it's body.
-        /// </summary>
-        private void HandleBodyCollision()
-        {
-            // Actor head = _snake.GetHead();
-
-            // List<Actor> segments = _snake.GetCollidableSegments();
-
-            // foreach(Actor segment in segments)
-            // {
-            //     if (IsCollision(head, segment))
-            //     {
-            //         // There is a collision
-            //         _keepPlaying = false;
-            //         break;
-            //     }
-            // }
-        }
-
-        /// <summary>
-        /// Looks for and handles the case of the snake's head
-        /// colliding with the food.
-        /// </summary>
-        private void HandleFoodCollision()
-        {
-            // TODO: Add this code back in when
-            // the food class is complete.
-
-            // Actor head = _snake.GetHead();
-            
-            // if (IsCollision(head, _food))
-            // {
-            //     int points = _food.GetPoints();
-
-            //     _snake.GrowTail(points);
-            //     _scoreBoard.AddPoints(points);
-            //     _food.Reset();
-            // }
-        }
-
-        /// <summary>
-        /// Returns true if the two actors are overlapping.
-        /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <returns></returns>
-        public bool IsCollision(Actor first, Actor second)
-        {
-            int x1 = first.GetX();
-            int y1 = first.GetY();
-            int width1 = first.GetWidth();
-            int height1 = first.GetHeight();
-
-            Raylib_cs.Rectangle rectangle1
-                = new Raylib_cs.Rectangle(x1, y1, width1, height1);
-
-            int x2 = second.GetX();
-            int y2 = second.GetY();
-            int width2 = second.GetWidth();
-            int height2 = second.GetHeight();
-
-            Raylib_cs.Rectangle rectangle2
-                = new Raylib_cs.Rectangle(x2, y2, width2, height2);
-
-            return Raylib.CheckCollisionRecs(rectangle1, rectangle2);
         }
 
 
