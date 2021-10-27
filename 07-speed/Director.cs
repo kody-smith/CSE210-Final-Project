@@ -67,6 +67,7 @@ namespace _07_speed
         /// <summary>
         /// Update any of the actors.
         /// get words and check buffer words and generated words
+        /// if the words reach to the left side of screen, player lose score
         /// based on the matching, get score
         /// </summary>
         private void DoUpdates()
@@ -75,6 +76,7 @@ namespace _07_speed
         }
 
         /// <summary>
+        /// "When user push ENTER_KEY",
         /// Display the updated state of the game to the user.
         /// delete matching word, and add score on thescore board.
         /// </summary>

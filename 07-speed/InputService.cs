@@ -14,9 +14,9 @@ namespace _07_speed
 
         }
 
-        public bool IsAPressed()
+        public int GetKeyPressed() 
         {
-            return Raylib.IsKeyDown(KeyboardKey.KEY_A);
+            return Raylib.GetKeyPressed();
         }
 
         public bool IsEscapePressed()
@@ -24,6 +24,10 @@ namespace _07_speed
             return Raylib.IsKeyDown(KeyboardKey.KEY_ESCAPE);
         }
 
+        public bool IsEnterPressed()
+        {
+            return Raylib.IsKeyDown(KeyboardKey.KEY_ENTER);
+        }
         
         /// <summary>
         /// Returns true if the user has attempted to close the window.
