@@ -52,45 +52,31 @@ namespace _07_speed
         /// </summary>
         private void PrepareGame()
         {
-            _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Snake Game", Constants.FRAME_RATE);
+            _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed Game", Constants.FRAME_RATE);
         }
 
         /// <summary>
-        /// Get any input needed from the user.
+        /// Get any text input needed from the user for buffer.
         /// </summary>
         private void GetInputs()
         {
-            if (_inputService.IsLeftPressed())
-            {
-                // _snake.TurnHead(new Point(-1, 0));
-            }
-            else if (_inputService.IsRightPressed())
-            {
-                // _snake.TurnHead(new Point(1, 0));
-            }
-            else if (_inputService.IsUpPressed())
-            {
-                // _snake.TurnHead(new Point(0, -1));
-            }
-            else if (_inputService.IsDownPressed())
-            {
-                // _snake.TurnHead(new Point(0, 1));
-            }
+            Raylib.IsKeyDown(KeyboardKey);
+          
         }
 
         /// <summary>
         /// Update any of the actors.
+        /// get words and check buffer words and generated words
+        /// based on the matching, get score
         /// </summary>
         private void DoUpdates()
         {
-            // _snake.Move();
-
-            HandleFoodCollision();
-            HandleBodyCollision();
+           
         }
 
         /// <summary>
         /// Display the updated state of the game to the user.
+        /// delete matching word, and add score on thescore board.
         /// </summary>
         private void DoOutputs()
         {
