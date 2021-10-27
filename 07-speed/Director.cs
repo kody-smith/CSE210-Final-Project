@@ -52,127 +52,38 @@ namespace _07_speed
         /// </summary>
         private void PrepareGame()
         {
-            _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Snake Game", Constants.FRAME_RATE);
+            _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed Game", Constants.FRAME_RATE);
         }
 
         /// <summary>
-        /// Get any input needed from the user.
+        /// Get any text input needed from the user for buffer.
         /// </summary>
         private void GetInputs()
         {
-            if (_inputService.IsLeftPressed())
-            {
-                // _snake.TurnHead(new Point(-1, 0));
-            }
-            else if (_inputService.IsRightPressed())
-            {
-                // _snake.TurnHead(new Point(1, 0));
-            }
-            else if (_inputService.IsUpPressed())
-            {
-                // _snake.TurnHead(new Point(0, -1));
-            }
-            else if (_inputService.IsDownPressed())
-            {
-                // _snake.TurnHead(new Point(0, 1));
-            }
+          
         }
 
         /// <summary>
         /// Update any of the actors.
+        /// get words and check buffer words and generated words
+        /// if the words reach to the left side of screen, player lose score
+        /// based on the matching, get score
         /// </summary>
         private void DoUpdates()
         {
-            // _snake.Move();
-
-            HandleFoodCollision();
-            HandleBodyCollision();
+           
         }
 
         /// <summary>
+        /// "When user push ENTER_KEY",
         /// Display the updated state of the game to the user.
+        /// delete matching word, and add score on thescore board.
         /// </summary>
         private void DoOutputs()
         {
             _outputService.StartDrawing();
 
-            _outputService.DrawActor(_scoreBoard);
-
-            // TODO: Add this back in when the food class is complete.
-            // _outputService.DrawActor(_food);
-            
-            // _outputService.DrawActors(_snake.GetAllSegments());
-
             _outputService.EndDrawing();
-        }
-
-        /// <summary>
-        /// Looks for and handles collisions between the snake's head
-        /// and it's body.
-        /// </summary>
-        private void HandleBodyCollision()
-        {
-            // Actor head = _snake.GetHead();
-
-            // List<Actor> segments = _snake.GetCollidableSegments();
-
-            // foreach(Actor segment in segments)
-            // {
-            //     if (IsCollision(head, segment))
-            //     {
-            //         // There is a collision
-            //         _keepPlaying = false;
-            //         break;
-            //     }
-            // }
-        }
-
-        /// <summary>
-        /// Looks for and handles the case of the snake's head
-        /// colliding with the food.
-        /// </summary>
-        private void HandleFoodCollision()
-        {
-            // TODO: Add this code back in when
-            // the food class is complete.
-
-            // Actor head = _snake.GetHead();
-            
-            // if (IsCollision(head, _food))
-            // {
-            //     int points = _food.GetPoints();
-
-            //     _snake.GrowTail(points);
-            //     _scoreBoard.AddPoints(points);
-            //     _food.Reset();
-            // }
-        }
-
-        /// <summary>
-        /// Returns true if the two actors are overlapping.
-        /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <returns></returns>
-        public bool IsCollision(Actor first, Actor second)
-        {
-            int x1 = first.GetX();
-            int y1 = first.GetY();
-            int width1 = first.GetWidth();
-            int height1 = first.GetHeight();
-
-            Raylib_cs.Rectangle rectangle1
-                = new Raylib_cs.Rectangle(x1, y1, width1, height1);
-
-            int x2 = second.GetX();
-            int y2 = second.GetY();
-            int width2 = second.GetWidth();
-            int height2 = second.GetHeight();
-
-            Raylib_cs.Rectangle rectangle2
-                = new Raylib_cs.Rectangle(x2, y2, width2, height2);
-
-            return Raylib.CheckCollisionRecs(rectangle1, rectangle2);
         }
 
 
