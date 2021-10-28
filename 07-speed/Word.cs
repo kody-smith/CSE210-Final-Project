@@ -39,6 +39,8 @@ namespace _07_speed
             int x = Constants.MAX_X;
             int y = rnd.Next(0,Constants.MAX_Y);
 
+
+            _position = new Point(x,y);
             _velocity = new Point(x, y);
 
             UpdateWord();
