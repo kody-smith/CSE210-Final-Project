@@ -71,7 +71,7 @@ namespace _07_speed
         /// </summary>
         private void DoUpdates()
         {
-           
+           _word.Move();
         }
 
         /// <summary>

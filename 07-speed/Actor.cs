@@ -82,7 +82,7 @@ namespace _07_speed
             int dx = _velocity.GetX();
             int dy = _velocity.GetY();
 
-            int newX = (x + dx) % Constants.MAX_X;
+            int newX = dx % Constants.MAX_X;
             int newY = (y + dy) % Constants.MAX_Y;
 
             if (newX < 0)
@@ -95,7 +95,7 @@ namespace _07_speed
                 newY = Constants.MAX_Y;
             }
 
-            _position = new Point(newX, newY);
+            _velocity = new Point(newX, newY);
         }
 
         public override string ToString()
