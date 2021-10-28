@@ -60,14 +60,11 @@ namespace _07_speed
             // Now update the velocity for each one to have the velocity of the segment before
             for (int i = _segments.Count - 1; i >= 0; i--)
             {
-                if (i > 0) // Not the head
-                {
                     Actor currentSegment = _segments[i];
                     Actor segmentBefore = _segments[i - 1];
 
                     Point velocity = segmentBefore.GetVelocity();
                     currentSegment.SetVelocity(velocity);
-                }
             }
         }
         public override string ToString()
