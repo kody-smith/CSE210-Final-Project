@@ -45,15 +45,15 @@ namespace _07_speed
             return _position.GetY();
         }
 
-        // public int GetWidth()
-        // {
-        //     return _width;
-        // }
+        public int GetWidth()
+        {
+            return _width;
+        }
 
-        // public int GetHeight()
-        // {
-        //     return _height;
-        // }
+        public int GetHeight()
+        {
+            return _height;
+        }
 
         public Point GetPosition()
         {
@@ -82,7 +82,7 @@ namespace _07_speed
             int dx = _velocity.GetX();
             int dy = _velocity.GetY();
 
-            int newX = dx % Constants.MAX_X;
+            int newX = (x + dx) % Constants.MAX_X;
             int newY = (y + dy) % Constants.MAX_Y;
 
             if (newX < 0)
@@ -95,7 +95,7 @@ namespace _07_speed
                 newY = Constants.MAX_Y;
             }
 
-            _velocity = new Point(newX, newY);
+            _position = new Point(newX, newY);
         }
 
         public override string ToString()

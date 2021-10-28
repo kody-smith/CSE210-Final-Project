@@ -7,7 +7,7 @@ namespace _07_speed
     {
         private string _words;
 
-        private List<Actor> _segments = new List<Actor>();
+        private List<string> _printwords = new List<string>();
 
         public string[] _wordArray = {"ace", "right", "walk", "bro", "up", "down", "stop", "win", "dunk", "it", "off", "jump", "empyrean", "arapaima", "guiana", "burrito", "cheese", "queso", "montana", "idaho", "missouri", "florida", "president", "organization", "topaz", "supercalifragilisticexpialidocious", "pound",
             "water", "jersey", "jabberwocky", "persona", "allegory", "reverence", "temple","subtle","demagogue","transient","arid","desert","pizza","intrepid",
@@ -16,7 +16,11 @@ namespace _07_speed
 
         public Word()
         {
-            Reset();
+            for (int i = 0; i < _wordArray.Length; i++)
+            {
+                Reset();
+            }
+            
 
         }
 
@@ -34,44 +38,36 @@ namespace _07_speed
         {
             Random rnd = new Random();
             int wordchoice = rnd.Next(0,_wordArray.Length);
-            _text = _wordArray[wordchoice];
-            
+            _printwords.Add(_wordArray[wordchoice]);
+            Console.WriteLine(_wordArray[wordchoice]);
+
+            foreach(string word in _printwords)
+            {
+                _text = word;
+            }
+            // _segments.Add(_wordArray[wordchoice]);
+        
             int x = Constants.MAX_X;
             int y = rnd.Next(0,Constants.MAX_Y);
-
-
+            // int x = 200;
+            // int y = 200;
+            int xv = -1;
             _position = new Point(x,y);
-
-            UpdateWord();
+            _velocity = new Point(xv,0);
+            
+            
         }
 
         public string UpdateWord()
         {
+            
             return _words;
         }
 
         public void Move()
         {
-            // First move them all forward...
-            foreach (Actor actor in _segments)
-            {
-                actor.MoveNext();
-            }
-
-            // Now update the velocity for each one to have the velocity of the segment before
-            for (int i = _segments.Count - 1; i >= 0; i--)
-            {
-                    Actor currentSegment = _segments[i];
-                    Actor segmentBefore = _segments[i - 1];
-
-                    Point velocity = segmentBefore.GetVelocity();
-                    currentSegment.SetVelocity(velocity);
-            }
+            MoveNext();
         }
-        public override string ToString()
-        {
-            return $"Position: ({_position.GetX()}, {_position.GetY()}), Velocity({_velocity.GetX()}, {_velocity.GetY()})";
-        }
-
+  
     }
 }

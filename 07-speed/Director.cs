@@ -18,12 +18,10 @@ namespace _07_speed
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
 
-        // TODO: Add this line back in when the Food class
-        // is ready
-        // Food _food = new Food();
-
         Word _word = new Word();
         ScoreBoard _scoreBoard = new ScoreBoard();
+        //Uncomment when buffer is ready
+        // Buffer _buffer = new Buffer();
 
         /// <summary>
         /// This method starts the game and continues running until it is finished.
@@ -85,6 +83,8 @@ namespace _07_speed
 
             _outputService.DrawActor(_scoreBoard);
             _outputService.DrawActor(_word);
+            //Uncomment when buffer is ready
+            // _outputService.DrawActor(_buffer);
             _outputService.EndDrawing();
         }
 

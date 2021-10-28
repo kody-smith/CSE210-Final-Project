@@ -16,7 +16,7 @@ namespace _07_speed
         public const int DEFAULT_FONT_SIZE = 18; //18
         public const int DEFAULT_TEXT_OFFSET = 4; //4
 
-        public const int SNAKE_LENGTH = 50; //50
+        public const int VELOCITY = -3; //50
     }
 
 }
