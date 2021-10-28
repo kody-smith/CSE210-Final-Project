@@ -8,8 +8,8 @@ namespace _07_speed
     public static class Constants
     {
         // The values commented out after these lines were the original values, just in case we need to backload.
-        public const int MAX_X = 600; //600
-        public const int MAX_Y = 400; //400
+        public const int MAX_X = 1000; //600
+        public const int MAX_Y = 800; //400
         public const int FRAME_RATE = 90; //90
 
         public const int DEFAULT_SQUARE_SIZE = 20; //20
