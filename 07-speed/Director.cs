@@ -83,6 +83,8 @@ namespace _07_speed
         {
             _outputService.StartDrawing();
 
+            _outputService.DrawActor(_scoreBoard);
+            _outputService.DrawActor(_word);
             _outputService.EndDrawing();
         }
 
