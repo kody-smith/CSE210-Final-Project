@@ -34,14 +34,13 @@ namespace _07_speed
         {
             Random rnd = new Random();
             int wordchoice = rnd.Next(0,_wordArray.Length);
-            _words = _wordArray[wordchoice];
+            _text = _wordArray[wordchoice];
             
             int x = Constants.MAX_X;
             int y = rnd.Next(0,Constants.MAX_Y);
 
 
             _position = new Point(x,y);
-            _velocity = new Point(x, y);
 
             UpdateWord();
         }

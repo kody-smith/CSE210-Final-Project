@@ -45,15 +45,15 @@ namespace _07_speed
             return _position.GetY();
         }
 
-        public int GetWidth()
-        {
-            return _width;
-        }
+        // public int GetWidth()
+        // {
+        //     return _width;
+        // }
 
-        public int GetHeight()
-        {
-            return _height;
-        }
+        // public int GetHeight()
+        // {
+        //     return _height;
+        // }
 
         public Point GetPosition()
         {

@@ -99,16 +99,16 @@ namespace _07_speed
         {
             int x = actor.GetX();
             int y = actor.GetY();
-            int width = actor.GetWidth();
-            int height = actor.GetHeight();
+            // int width = actor.GetWidth();
+            // int height = actor.GetHeight();
 
             bool darkText = true;
 
-            if (actor.HasBox())
-            {
-                DrawBox(x, y, width, height);
-                darkText = false;
-            }
+            // if (actor.HasBox())
+            // {
+            //     DrawBox(x, y, width, height);
+            //     darkText = false;
+            // }
 
             if (actor.HasText())
             {
