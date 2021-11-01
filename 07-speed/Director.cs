@@ -82,6 +82,7 @@ namespace _07_speed
             _outputService.StartDrawing();
 
             _outputService.DrawActor(_scoreBoard);
+
             _outputService.DrawActor(_word);
             //Uncomment when buffer is ready
             // _outputService.DrawActor(_buffer);
