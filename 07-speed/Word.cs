@@ -14,7 +14,7 @@ namespace _07_speed
             "extraterrestrial","antidote","beach","agriculture","paradise","armistice","accordion","saxophone","piano","enterprise","sovereignty","amendment",
             "lincoln","mercury","sepulchral","nyctophobia","solomon","revelation"};
 
-        public Word()
+        public Word(string text)
         {
             for (int i = 0; i < _wordArray.Length; i++)
             {
