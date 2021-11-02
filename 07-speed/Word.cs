@@ -5,8 +5,11 @@ namespace _07_speed
     // Define the Word class here.
     class Word : Actor
     {
+        private string rndword;
         public Word(string _text)
         {
+            rndword = _text;
+            UpdateWord();
             Setup();
         }
 
@@ -33,7 +36,7 @@ namespace _07_speed
 
         public string UpdateWord()
         {
-            
+            // rndword = _text;
             return _text;
         }
 

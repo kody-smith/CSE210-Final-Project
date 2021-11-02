@@ -18,14 +18,15 @@ namespace _07_speed
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
 
-        Word _word = new Word(WordGenerator.text);
+        Word _word = new Word(default);
+        WordGenerator _wordGenerator = new WordGenerator();
         ScoreBoard _scoreBoard = new ScoreBoard();
-        Word _text = new Word(Actor._text);
+        Word _rndword;
         //Uncomment when buffer is ready
-        // Buffer _buffer = new Buffer();
+        //Buffer _buffer = new Buffer();
 
         /// <summary>
-        /// This method starts the game and continues running until it is finished.
+        ///This method starts the game and continues running until it is finished.
         /// </summary>
         public void StartGame()
         {
@@ -51,6 +52,7 @@ namespace _07_speed
         /// </summary>
         private void PrepareGame()
         {
+            _wordGenerator.CreateNewWord();
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed Game", Constants.FRAME_RATE);
         }
 
@@ -70,6 +72,8 @@ namespace _07_speed
         /// </summary>
         private void DoUpdates()
         {
+            _rndword = _wordGenerator.CreateNewWord();
+
            _word.Move();
         }
 
@@ -84,7 +88,7 @@ namespace _07_speed
 
             _outputService.DrawActor(_scoreBoard);
 
-            _outputService.DrawActor(_text);
+            _outputService.DrawActor(_rndword);
             //Uncomment when buffer is ready
             // _outputService.DrawActor(_buffer);
             _outputService.EndDrawing();

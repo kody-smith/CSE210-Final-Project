@@ -77,7 +77,7 @@ namespace _07_speed
         /// <param name="darkText"></param>
         public void DrawText(int x, int y, string text, bool darkText)
         {
-            Raylib_cs.Color color = Raylib_cs.Color.WHITE;
+            Raylib_cs.Color color = Raylib_cs.Color.BLUE;
 
             if (darkText)
             {
