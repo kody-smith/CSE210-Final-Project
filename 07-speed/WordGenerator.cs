@@ -16,8 +16,9 @@ namespace _07_speed
             Random rnd = new Random();
             int rndIndex = rnd.Next(0, _wordArray.Length);
             string text = _wordArray[rndIndex];
-            Word word = new Word(text);
-            return "";
+            Word w = new Word(text);
+            string word = w.ToString();
+            return word;
         }
 
     }
