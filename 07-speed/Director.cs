@@ -18,7 +18,7 @@ namespace _07_speed
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
 
-        Word _word = new Word();
+        Word _word = new Word(WordGenerator.text);
         ScoreBoard _scoreBoard = new ScoreBoard();
         //Uncomment when buffer is ready
         // Buffer _buffer = new Buffer();

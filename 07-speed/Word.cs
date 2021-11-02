@@ -18,6 +18,7 @@ namespace _07_speed
         }
         public string GetPoints()
         {
+            // Points equal number of letters in word
             return _words;
         }
 
