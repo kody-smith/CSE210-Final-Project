@@ -20,6 +20,7 @@ namespace _07_speed
 
         Word _word = new Word(WordGenerator.text);
         ScoreBoard _scoreBoard = new ScoreBoard();
+        Word _text = new Word(Actor._text);
         //Uncomment when buffer is ready
         // Buffer _buffer = new Buffer();
 
@@ -83,7 +84,7 @@ namespace _07_speed
 
             _outputService.DrawActor(_scoreBoard);
 
-            _outputService.DrawActor(_word);
+            _outputService.DrawActor(_text);
             //Uncomment when buffer is ready
             // _outputService.DrawActor(_buffer);
             _outputService.EndDrawing();

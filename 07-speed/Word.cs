@@ -5,8 +5,7 @@ namespace _07_speed
     // Define the Word class here.
     class Word : Actor
     {
-        private string _words;
-        public Word(string text)
+        public Word(string _text)
         {
             Setup();
         }
@@ -14,12 +13,12 @@ namespace _07_speed
         public void SetPoints(string words)
         {
             
-            _words = words;
+            _text = words;
         }
         public string GetPoints()
         {
             // Points equal number of letters in word
-            return _words;
+            return _text;
         }
 
         public void Setup()
@@ -29,14 +28,13 @@ namespace _07_speed
             int y = rnd.Next(0,Constants.MAX_Y);
             int xv = -1;
             _position = new Point(x,y);
-            _velocity = new Point(xv,0);
-            
+            _velocity = new Point(xv,0);            
         }
 
         public string UpdateWord()
         {
             
-            return _words;
+            return _text;
         }
 
         public void Move()
