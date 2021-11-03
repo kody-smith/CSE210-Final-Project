@@ -17,6 +17,8 @@ namespace _07_speed
         public const int DEFAULT_TEXT_OFFSET = 4; //4
 
         public const int VELOCITY = -3; //50
+        
+        public const int GENERATE_WORD_RATE = 2;
     }
 
 }

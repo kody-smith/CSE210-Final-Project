@@ -29,9 +29,9 @@ namespace _07_speed
             Random rnd = new Random();
             int x = Constants.MAX_X;
             int y = rnd.Next(0,Constants.MAX_Y);
-            int xv = -1;
+            int xv = rnd.Next(1,3);
             _position = new Point(x,y);
-            _velocity = new Point(xv,0);            
+            _velocity = new Point(-xv,0);            
         }
 
         public void UpdateWord()

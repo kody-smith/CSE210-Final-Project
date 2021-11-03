@@ -21,7 +21,8 @@ namespace _07_speed
         Word _word = new Word(default);
         WordGenerator _wordGenerator = new WordGenerator();
         ScoreBoard _scoreBoard = new ScoreBoard();
-        Word _rndword;
+        private List<Word> _words = new List<Word>();
+
         //Uncomment when buffer is ready
         //Buffer _buffer = new Buffer();
 
@@ -52,8 +53,13 @@ namespace _07_speed
         /// </summary>
         private void PrepareGame()
         {
-            //Grab single word from Array and set it to a variable
-            _rndword = _wordGenerator.CreateNewWord();
+            //Grab single word from Array and set it to a variable. Needs to be set to a list then we use
+            // each of the members of that list to print out each actor.
+            for(int i = 0; i < 5; i++)
+            {
+                Word word = _wordGenerator.CreateNewWord();
+                _words.Add(word);
+            }
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed Game", Constants.FRAME_RATE);
         }
 
@@ -73,8 +79,13 @@ namespace _07_speed
         /// </summary>
         private void DoUpdates()
         {   
+            GenerateNewWords();
             //Call move from Word.cs to change x position
-            _rndword.Move();
+            foreach(Word word in _words)
+            {
+                word.Move();
+            }
+            
         }
 
         /// <summary>
@@ -88,12 +99,26 @@ namespace _07_speed
 
             _outputService.DrawActor(_scoreBoard);
 
-            _outputService.DrawActor(_rndword);       
+            foreach(Word word in _words)
+            {
+                _outputService.DrawActor(word);
+            }
+                  
+                  
             //Uncomment when buffer is ready
             // _outputService.DrawActor(_buffer);
             _outputService.EndDrawing();
         }
 
-
+        private void GenerateNewWords()
+        {
+            Random rnd = new Random();
+            int chance = rnd.Next(01,100);
+            if(chance < Constants.GENERATE_WORD_RATE)
+            {
+                Word w = _wordGenerator.CreateNewWord();
+                _words.Add(w);
+            }
+        }
     }
 }
