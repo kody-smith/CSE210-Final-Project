@@ -52,7 +52,8 @@ namespace _07_speed
         /// </summary>
         private void PrepareGame()
         {
-            _wordGenerator.CreateNewWord();
+            //Grab single word from Array and set it to a variable
+            _rndword = _wordGenerator.CreateNewWord();
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed Game", Constants.FRAME_RATE);
         }
 
@@ -71,10 +72,9 @@ namespace _07_speed
         /// based on the matching, get score
         /// </summary>
         private void DoUpdates()
-        {
-            _rndword = _wordGenerator.CreateNewWord();
-
-           _word.Move();
+        {   
+            //Call move from Word.cs to change x position
+            _rndword.Move();
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace _07_speed
 
             _outputService.DrawActor(_scoreBoard);
 
-            _outputService.DrawActor(_rndword);
+            _outputService.DrawActor(_rndword);       
             //Uncomment when buffer is ready
             // _outputService.DrawActor(_buffer);
             _outputService.EndDrawing();

@@ -5,7 +5,7 @@ namespace _07_speed
     // Define the Word class here.
     class Word : Actor
     {
-        private string rndword;
+        public string rndword;
         public Word(string _text)
         {
             rndword = _text;
@@ -34,10 +34,9 @@ namespace _07_speed
             _velocity = new Point(xv,0);            
         }
 
-        public string UpdateWord()
+        public void UpdateWord()
         {
-            // rndword = _text;
-            return _text;
+            SetText(rndword);
         }
 
         public void Move()

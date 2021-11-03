@@ -77,12 +77,12 @@ namespace _07_speed
         /// <param name="darkText"></param>
         public void DrawText(int x, int y, string text, bool darkText)
         {
-            Raylib_cs.Color color = Raylib_cs.Color.BLUE;
+            Raylib_cs.Color color = Raylib_cs.Color.BLACK;
 
-            if (darkText)
-            {
-                color = Raylib_cs.Color.BLACK;
-            }
+            // if (darkText)
+            // {
+            //     color = Raylib_cs.Color.BLACK;
+            // }
 
             Raylib.DrawText(text,
                 x + Constants.DEFAULT_TEXT_OFFSET,
@@ -110,11 +110,11 @@ namespace _07_speed
             //     darkText = false;
             // }
 
-            if (actor.HasText())
-            {
+            // if (actor.HasText())
+            // {
                 string text = actor.GetText();
                 DrawText(x, y, text, darkText);
-            }
+            // }
         }
 
         /// <summary>

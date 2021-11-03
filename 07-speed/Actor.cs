@@ -29,7 +29,10 @@ namespace _07_speed
         {
             return _width > 0 && _height > 0;
         }
-
+        public void SetText(string word)
+        {
+            this._text = word;
+        }
         public string GetText()
         {
             return _text;
