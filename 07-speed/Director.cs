@@ -24,7 +24,7 @@ namespace _07_speed
         private List<Word> _words = new List<Word>();
 
         //Uncomment when buffer is ready
-        //Buffer _buffer = new Buffer();
+        Buffer _buffer = new Buffer();
 
         /// <summary>
         ///This method starts the game and continues running until it is finished.
@@ -62,7 +62,6 @@ namespace _07_speed
             }
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Speed Game", Constants.FRAME_RATE);
         }
-
         /// <summary>
         /// Get any text input needed from the user for buffer.
         /// </summary>
@@ -106,14 +105,14 @@ namespace _07_speed
                   
                   
             //Uncomment when buffer is ready
-            // _outputService.DrawActor(_buffer);
+            _outputService.DrawActor(_buffer);
             _outputService.EndDrawing();
         }
 
         private void GenerateNewWords()
         {
             Random rnd = new Random();
-            int chance = rnd.Next(01,100);
+            int chance = rnd.Next(1,50);
             if(chance < Constants.GENERATE_WORD_RATE)
             {
                 Word w = _wordGenerator.CreateNewWord();

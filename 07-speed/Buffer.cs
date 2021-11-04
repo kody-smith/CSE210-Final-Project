@@ -6,7 +6,7 @@ namespace _07_speed
   class Buffer : Actor
   {
      InputService _inputService = new InputService();
-     string _keyStrings;
+     KeyboardKey _userInput;
 
     public Buffer()
     {
@@ -14,30 +14,37 @@ namespace _07_speed
       _width = 0;
       _height = 0;
 
-      // UpdateText();
+      GetUserInput();
+      UpdateText();
     }
 
     private string GetUserInput()
     {
       int keyInt = Raylib.GetKeyPressed();
-      string keyString = "";
+      string _userInput = "";
       if (keyInt != 0)
       {
+        
        char keyChar = (char)keyInt;
-       keyString = keyChar.ToString().ToLower();
+       _userInput = keyChar.ToString().ToLower();
       }
-        return keyString;
+      return _userInput;
     } 
 
-    private string SetKeyStrings()
-    {
-      return _keyStrings = GetUserInput();
-    }
+    // private string SetUserInput()
+    // {
+    //   return _userInput = GetUserInput();
+    // }
 
     private void ResetBuffer()
     {
       
       
     }
+    private void UpdateText()
+    {
+      _text = $"Buffer: {_inputService.SetKeyPressed(_userInput)}";
+    }
+
   }
 }

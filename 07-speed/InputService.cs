@@ -8,10 +8,20 @@ namespace _07_speed
     /// </summary>
     public class InputService
     {
-        KeyboardKey _KeyboardKey = new KeyboardKey();
+        KeyboardKey KeyboardKey = new KeyboardKey();
         public InputService()
         {
+            
+        }
 
+        public KeyboardKey SetKeyPressed(KeyboardKey keyboardKey)
+        {
+            keyboardKey = KeyboardKey;
+            return keyboardKey;
+        }
+        public KeyboardKey GetKeyPressed()
+        {
+            return KeyboardKey;
         }
 
 

@@ -13,7 +13,7 @@ namespace _07_speed
         public const int FRAME_RATE = 90; //90
 
         public const int DEFAULT_SQUARE_SIZE = 20; //20
-        public const int DEFAULT_FONT_SIZE = 30; //18
+        public const int DEFAULT_FONT_SIZE = 18; //18
         public const int DEFAULT_TEXT_OFFSET = 4; //4
 
         public const int VELOCITY = -3; //50
