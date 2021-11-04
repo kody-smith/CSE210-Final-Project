@@ -32,9 +32,12 @@ namespace _07_speed
     //   return _userInput = GetUserInput();
     // }
 
-    private void ResetBuffer()
+    public void ResetBuffer()
     {
-      
+      if(_inputService.IsEnterPressed())
+      {
+        word = "";
+      }
       
     }
     public void UpdateText()

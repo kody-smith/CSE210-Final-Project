@@ -71,7 +71,7 @@ namespace _07_speed
         {
           text = _inputService.GetUserInput();
           _buffer.GetUserInput(text);
-        //   Console.WriteLine($"{text}");
+          _buffer.ResetBuffer();
 
 
         }
