@@ -43,6 +43,19 @@ namespace _07_speed
         {
             return Raylib.WindowShouldClose();
         }
+
+        public string GetUserInput()
+        {
+          int keyInt = Raylib.GetKeyPressed();
+          string _userInput = "";
+          if (keyInt != 0)
+          {
+          
+           char keyChar = (char)keyInt;
+           _userInput = keyChar.ToString().ToLower();
+          }
+          return _userInput;
+        } 
     }
 
 }

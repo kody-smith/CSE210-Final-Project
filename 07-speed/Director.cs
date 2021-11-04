@@ -22,9 +22,11 @@ namespace _07_speed
         WordGenerator _wordGenerator = new WordGenerator();
         ScoreBoard _scoreBoard = new ScoreBoard();
         private List<Word> _words = new List<Word>();
+        KeyboardKey KeyboardKey = new KeyboardKey();
 
         //Uncomment when buffer is ready
         Buffer _buffer = new Buffer();
+        string text;
 
         /// <summary>
         ///This method starts the game and continues running until it is finished.
@@ -67,7 +69,11 @@ namespace _07_speed
         /// </summary>
         private void GetInputs()
         {
-          
+          text = _inputService.GetUserInput();
+          _buffer.GetUserInput(text);
+        //   Console.WriteLine($"{text}");
+
+
         }
 
         /// <summary>
@@ -84,6 +90,11 @@ namespace _07_speed
             {
                 word.Move();
             }
+
+            
+            _buffer.CombineLetter();
+
+           
             
         }
 

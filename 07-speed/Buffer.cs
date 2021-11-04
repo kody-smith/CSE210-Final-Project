@@ -6,30 +6,26 @@ namespace _07_speed
   class Buffer : Actor
   {
      InputService _inputService = new InputService();
-     KeyboardKey _userInput;
+     string word = "";
+     string _userInput;
+    
 
     public Buffer()
     {
+      
       _position = new Point(0, Constants.MAX_Y - 25);
       _width = 0;
       _height = 0;
 
-      GetUserInput();
-      UpdateText();
+      // GetUserInput();
+      
     }
 
-    private string GetUserInput()
+    public string GetUserInput(string t)
     {
-      int keyInt = Raylib.GetKeyPressed();
-      string _userInput = "";
-      if (keyInt != 0)
-      {
-        
-       char keyChar = (char)keyInt;
-       _userInput = keyChar.ToString().ToLower();
-      }
-      return _userInput;
-    } 
+      return _userInput = t;
+    }
+
 
     // private string SetUserInput()
     // {
@@ -41,9 +37,16 @@ namespace _07_speed
       
       
     }
-    private void UpdateText()
+    public void UpdateText()
     {
-      _text = $"Buffer: {_inputService.SetKeyPressed(_userInput)}";
+      _text = $"Buffer: {word}";
+    }
+
+    public void CombineLetter()
+    {
+      word += _userInput;
+      UpdateText();
+      
     }
 
   }
