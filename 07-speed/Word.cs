@@ -14,11 +14,11 @@ namespace _07_speed
             Setup();
         }
 
-        public void SetPoints(string words)
+        public void SetPoints(string word)
         {
             //points = length of word
             // string word = words;
-            int pointValue = words.Length;
+            int pointValue = word.Length;
             _points += pointValue;
         }
         public int GetPoints()

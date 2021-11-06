@@ -13,7 +13,7 @@ namespace _07_speed
         protected int _width = Constants.DEFAULT_SQUARE_SIZE;
         protected int _height = Constants.DEFAULT_SQUARE_SIZE;
 
-        protected string _text = "";
+        public string _text = "";
 
         public Actor()
         {

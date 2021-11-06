@@ -9,6 +9,7 @@ namespace _07_speed
     public class InputService
     {
         KeyboardKey KeyboardKey = new KeyboardKey();
+        public string _userInput;
         public InputService()
         {
             

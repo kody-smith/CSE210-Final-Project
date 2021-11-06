@@ -33,7 +33,7 @@ namespace _07_speed
         /// Updates the text to reflect the new points amount.
         /// This should be called whenever the points are updated.
         /// </summary>
-        private void UpdateText()
+        public void UpdateText()
         {
             _text = $"Score: {_points}";
         }

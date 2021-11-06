@@ -71,7 +71,10 @@ namespace _07_speed
         {
           text = _inputService.GetUserInput();
           _buffer.GetUserInput(text);
-          _buffer.ResetBuffer();
+          if(_inputService.IsEnterPressed())
+          {
+            _buffer.ResetBuffer();
+          }
 
 
         }
@@ -89,9 +92,9 @@ namespace _07_speed
             foreach(Word word in _words)
             {
                 word.Move();
-                IsMatch(_buffer._userInput);
+                
             }
- 
+            IsMatch(_inputService.GetUserInput());
             _buffer.CombineLetter();
             
  
@@ -106,9 +109,9 @@ namespace _07_speed
             // guess = _buffer._userInput;
             foreach(Word word in _words)
             {
-                if(guess == word.ToString())
+                if(guess == word._text)
                 {
-                    _word.SetPoints(word.ToString());
+                    _word.SetPoints(word._text);
                     int points = _word.GetPoints();
                     _scoreBoard.AddPoints(points);
                 }

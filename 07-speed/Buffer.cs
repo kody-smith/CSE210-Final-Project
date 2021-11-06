@@ -23,7 +23,7 @@ namespace _07_speed
 
     public string GetUserInput(string t)
     {
-      return _userInput = "ace";
+      return _userInput = t;
     }
 
     // public string OnlyReturnUserInput()
@@ -37,11 +37,7 @@ namespace _07_speed
 
     public void ResetBuffer()
     {
-      if(_inputService.IsEnterPressed())
-      {
         word = "";
-      }
-      
     }
     public void UpdateText()
     {
