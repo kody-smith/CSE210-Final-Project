@@ -89,27 +89,30 @@ namespace _07_speed
             foreach(Word word in _words)
             {
                 word.Move();
-                // string wordPleaseWork = _buffer.OnlyReturnUserInput();
-            //     if(_word.rndword == wordPleaseWork)
-            //    {
-                //    _scoreBoard.AddPoints(word.GetPoints());
-                    // Console.WriteLine(wordPleaseWork);
-                    Console.WriteLine(_word.GetString());
-            //    }
+                IsMatch(_buffer._userInput);
             }
-
-            
+ 
             _buffer.CombineLetter();
-
-        //    foreach(Word word in _words)
-        //    {
-        //        if(_word.rndword == _buffer.OnlyReturnUserInput())
-        //        {
-        //            _scoreBoard.AddPoints(word.GetPoints());
-        //        }
-        //        I know that what's below is definitely working, but it definitely adds points real quick!
-        //        _scoreBoard.AddPoints(word.GetPoints());
-        //    }
+            
+ 
+            // if(_buffer._userInput == _word.rndword)
+            // {
+            //     _word.SetPoints(_word.rndword);
+            //     _scoreBoard.AddPoints(_word._points);
+            // } 
+        }
+        private void IsMatch(string guess)
+        {
+            // guess = _buffer._userInput;
+            foreach(Word word in _words)
+            {
+                if(guess == word.ToString())
+                {
+                    _word.SetPoints(word.ToString());
+                    int points = _word.GetPoints();
+                    _scoreBoard.AddPoints(points);
+                }
+            }
             
         }
 

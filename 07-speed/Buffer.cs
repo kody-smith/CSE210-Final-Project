@@ -7,7 +7,7 @@ namespace _07_speed
   {
      InputService _inputService = new InputService();
      string word = "";
-     string _userInput;
+     public string _userInput;
     
 
     public Buffer()
@@ -23,13 +23,13 @@ namespace _07_speed
 
     public string GetUserInput(string t)
     {
-      return _userInput = t;
+      return _userInput = "ace";
     }
 
-    public string OnlyReturnUserInput()
-    {
-      return word;
-    }
+    // public string OnlyReturnUserInput()
+    // {
+    //   return word;
+    // }
     // private string SetUserInput()
     // {
     //   return _userInput = GetUserInput();
