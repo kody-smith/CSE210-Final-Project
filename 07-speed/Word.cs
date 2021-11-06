@@ -6,6 +6,7 @@ namespace _07_speed
     class Word : Actor
     {
         public string rndword;
+        private int score;
         public Word(string _text)
         {
             rndword = _text;
@@ -17,11 +18,18 @@ namespace _07_speed
         {
             
             _text = words;
+            score = _text.Length;
+            
         }
-        public string GetPoints()
+        public string GetString()
         {
+            return rndword;
+        }
+        public int GetPoints()
+        {
+            SetPoints(_text);
             // Points equal number of letters in word
-            return _text;
+            return score;
         }
 
         public void Setup()

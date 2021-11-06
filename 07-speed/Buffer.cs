@@ -26,7 +26,10 @@ namespace _07_speed
       return _userInput = t;
     }
 
-
+    public string OnlyReturnUserInput()
+    {
+      return word;
+    }
     // private string SetUserInput()
     // {
     //   return _userInput = GetUserInput();

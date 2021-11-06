@@ -89,12 +89,27 @@ namespace _07_speed
             foreach(Word word in _words)
             {
                 word.Move();
+                // string wordPleaseWork = _buffer.OnlyReturnUserInput();
+            //     if(_word.rndword == wordPleaseWork)
+            //    {
+                //    _scoreBoard.AddPoints(word.GetPoints());
+                    // Console.WriteLine(wordPleaseWork);
+                    Console.WriteLine(_word.GetString());
+            //    }
             }
 
             
             _buffer.CombineLetter();
 
-           
+        //    foreach(Word word in _words)
+        //    {
+        //        if(_word.rndword == _buffer.OnlyReturnUserInput())
+        //        {
+        //            _scoreBoard.AddPoints(word.GetPoints());
+        //        }
+        //        I know that what's below is definitely working, but it definitely adds points real quick!
+        //        _scoreBoard.AddPoints(word.GetPoints());
+        //    }
             
         }
 
