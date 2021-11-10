@@ -6,6 +6,7 @@ namespace _07_speed
   class Buffer : Actor
   {
      InputService _inputService = new InputService();
+     Word _word = new Word(default);
      string word = "";
      public string _userInput;
     

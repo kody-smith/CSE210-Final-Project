@@ -94,7 +94,7 @@ namespace _07_speed
                 word.Move();
                 
             }
-            IsMatch(_inputService.GetUserInput());
+            IsMatch(_word._text);
             _buffer.CombineLetter();
             
  
@@ -104,9 +104,10 @@ namespace _07_speed
             //     _scoreBoard.AddPoints(_word._points);
             // } 
         }
+        
         private void IsMatch(string guess)
         {
-            // guess = _buffer._userInput;
+            guess = _buffer._userInput;
             foreach(Word word in _words)
             {
                 if(guess == word._text)
@@ -114,6 +115,7 @@ namespace _07_speed
                     _word.SetPoints(word._text);
                     int points = _word.GetPoints();
                     _scoreBoard.AddPoints(points);
+                    _scoreBoard.UpdateText();
                 }
             }
             

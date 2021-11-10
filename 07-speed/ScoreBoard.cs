@@ -26,7 +26,7 @@ namespace _07_speed
         public void AddPoints(int points)
         {
             _points += points;
-            UpdateText();
+            // UpdateText();
         }
 
         /// <summary>
