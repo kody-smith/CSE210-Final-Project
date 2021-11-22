@@ -1,0 +1,8 @@
+- Start up program
+- Display Actor
+- Copy code from past projects
+- User input
+- Display all Actors
+- Actions
+- Lower priority features 
+- Graphics and Sounds
