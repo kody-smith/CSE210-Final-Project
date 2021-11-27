@@ -17,10 +17,10 @@ namespace final_project.Actions
         {
             Point direction = _inputService.GetDirection();
             
-            Actor paddle = cast["paddle"][0];
+            Actor player = cast["player"][0];
 
             Point velocity = direction.Scale(Constants.PADDLE_SPEED);
-            paddle.SetVelocity(velocity);
+            player.SetVelocity(velocity);
         }
     }
 }

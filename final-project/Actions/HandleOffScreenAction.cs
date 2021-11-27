@@ -21,27 +21,6 @@ namespace final_project.Actions
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-            Actor ball = cast["balls"][0];
-            if(ball.GetLeftEdge() <= 0)
-            {
-                ball.ChangeDX();
-                _audioService.PlaySound(Constants.SOUND_BOUNCE);
-            }
-            if(ball.GetRightEdge() >= Constants.MAX_X)
-            {
-                ball.ChangeDX();
-                _audioService.PlaySound(Constants.SOUND_BOUNCE);
-            }
-            if(ball.GetTopEdge() <= 0)
-            {
-                ball.ChangeDY();
-                _audioService.PlaySound(Constants.SOUND_BOUNCE);
-            }
-            if(ball.GetBottomEdge() >= Constants.MAX_Y)
-            {
-                _audioService.PlaySound(Constants.SOUND_OVER);
-                Director._keepPlaying = false;
-            }
             
         }
 

@@ -51,6 +51,14 @@ namespace final_project.Services
             {
                 x = 1;
             }
+            if (IsUpPressed())
+            {
+                y=-1;
+            }
+            if (IsDownPressed())
+            {
+                y=1;
+            }
             
             
             return new Point(x, y);

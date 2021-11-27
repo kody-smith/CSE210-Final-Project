@@ -3,7 +3,7 @@ using final_project.Actors;
 using final_project.Services;
 
 
-namespace final_project.Actions;
+namespace final_project.Actions
 {
     /// <summary>
     /// An action to draw all of the actors in the game.
@@ -21,11 +21,10 @@ namespace final_project.Actions;
         {
             _outputService.StartDrawing();
 
-            foreach (List<Actor> group in cast.Values)
+            foreach(List<Actor> group in cast.Values)
             {
                 _outputService.DrawActors(group);
             }
-
             _outputService.EndDrawing();
         }
 

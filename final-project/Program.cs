@@ -13,28 +13,20 @@ namespace final_project
             // Create the cast
             Dictionary<string, List<Actor>> cast = new Dictionary<string, List<Actor>>();
             Actor actor = new Actor();
-            // Bricks
-            cast["bricks"] = new List<Actor>();
-
-            for(int x = 10; x < Constants.MAX_X; x+=Constants.BRICK_WIDTH + Constants.BRICK_SPACE)
-            {
-                for(int y = 10; y <= 146; y+=Constants.BRICK_HEIGHT + Constants.BRICK_SPACE)
-                {
-                    cast["bricks"].Add(new Brick(x,y,Constants.IMAGE_BRICK3));
-                }
-            }
-            
-
+            // player
+            cast["player"] = new List<Actor>();
+            Player player = new Player(new Point(Constants.PLAYER_X,Constants.PLAYER_Y),Constants.PLAYER_WIDTH,Constants.PLAYER_HEIGHT);
+            cast["player"].Add(player);
             // The Ball (or balls if desired)
-            cast["balls"] = new List<Actor>();
+            
 
             // TODO: Add your ball here
 
             // The paddle
-            cast["paddle"] = new List<Actor>();
+            
             // TODO: Add your paddle here
 
-            cast["scoreBoard"] = new List<Actor>();
+            
 
             // Create the script
             Dictionary<string, List<Action>> script = new Dictionary<string, List<Action>>();
@@ -64,9 +56,9 @@ namespace final_project
             ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);
             script["input"].Add(controlActorsAction);
             // Start up the game
-            outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Batter", Constants.FRAME_RATE);
-            audioService.StartAudio();
-            audioService.PlaySound(Constants.SOUND_START);
+            outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Top Down RPG", Constants.FRAME_RATE);
+            // audioService.StartAudio();
+            // audioService.PlaySound();
 
             Director theDirector = new Director(cast, script);
             theDirector.Direct();

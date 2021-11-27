@@ -20,29 +20,7 @@ namespace final_project.Actions
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-            Actor paddle = cast["paddle"][0];
-            Actor ball = cast["balls"][0];
-            List<Actor> bricks = cast["bricks"];
-            Actor scoreBoard = cast["scoreBoard"][0];
-            if(_physicsService.IsCollision(paddle,ball))
-            {
-                ball.ChangeDY();
-                audioService.PlaySound(Constants.SOUND_BOUNCE);
-            }
-            List<Actor> bricksToRemove = new List<Actor>();
-            foreach(Actor actor in bricks)
-            {
-                Brick brick = (Brick)actor;
-                if(_physicsService.IsCollision(ball,brick))
-                {
-                    ball.ChangeDY();
-                    scoreBoard.AddPoints(5);
-                    scoreBoard.UpdateText();
-                    bricksToRemove.Add(brick);
-                }
-            }
-            foreach(Actor brick in bricksToRemove)
-            {
-                cast["bricks"].Remove(brick);
-            }
+            
         }
+    }
+}

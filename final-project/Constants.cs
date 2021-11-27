@@ -7,29 +7,20 @@ namespace final_project
     /// </summary>
     public static class Constants
     {
-        public const int MAX_X = 800;
-        public const int MAX_Y = 600;
+        public const int MAX_X = 1500;
+        public const int MAX_Y = 1300;
         public const int FRAME_RATE = 30;
 
         public const int DEFAULT_SQUARE_SIZE = 20;
         public const int DEFAULT_FONT_SIZE = 20;
         public const int DEFAULT_TEXT_OFFSET = 4;
 
-        public const string IMAGE_BRICK1 = "./Assets/brick-1.png";
-        public const string IMAGE_BRICK2 = "./Assets/brick-2.png";
-        public const string IMAGE_BRICK3 = "./Assets/brick-3.png";
-        public const string IMAGE_BRICK4 = "./Assets/brick-4.png";
-        public const string IMAGE_BRICK5 = "./Assets/brick-5.png";
-        public const string IMAGE_BRICK6 = "./Assets/brick-6.png";
-        public const string IMAGE_PADDLE = "./Assets/bat.png";
-        public const string IMAGE_BALL = "./Assets/ball.png";
+        // Images
 
-        public const string SOUND_START = "./Assets/start.wav";
-        public const string SOUND_BOUNCE = "./Assets/boing.wav";
-        public const string SOUND_OVER = "./Assets/over.wav";
+        // Sounds
 
-        public const int BALL_X = MAX_X / 2;
-        public const int BALL_Y = MAX_Y - 125;
+        public const int PLAYER_X = MAX_X/2;
+        public const int PLAYER_Y = MAX_Y/2;
 
         public const int BALL_DX = 8;
         public const int BALL_DY = BALL_DX * -1;
@@ -37,8 +28,8 @@ namespace final_project
         public const int PADDLE_X = MAX_X / 2;
         public const int PADDLE_Y = MAX_Y - 25;
 
-        public const int BRICK_WIDTH = 48;
-        public const int BRICK_HEIGHT = 24;
+        public const int PLAYER_WIDTH = 24;
+        public const int PLAYER_HEIGHT = 24;
 
         public const int BRICK_SPACE = 5;
 
