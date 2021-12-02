@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace final_project.Actors
 {
-    public class Lives : Actor
+    public class Key : Actor
     {
-        public Lives(Point position, int width, int height)
+        public Key(Point position, int width, int height)
         {
             SetPosition(position);
             SetWidth(width);

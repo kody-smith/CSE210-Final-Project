@@ -21,7 +21,27 @@ namespace final_project.Actions
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-            
+           List<Actor> enemies = cast["enemies"];
+           foreach(Actor enemy in enemies)
+           {
+                if(enemy.GetLeftEdge() <= 0)
+                {
+                    enemy.ChangeDX();
+
+                }
+                if(enemy.GetRightEdge() >= Constants.MAX_X)
+                {
+                    enemy.ChangeDX();
+                }
+                // if(enemy.GetTopEdge() <= 0)
+                // {
+                //     enemy.ChangeDY();
+                // }
+                // if(enemy.GetBottomEdge() >= Constants.MAX_Y)
+                // {
+                //     Director._keepPlaying = false;
+                // } 
+           }
         }
 
     }

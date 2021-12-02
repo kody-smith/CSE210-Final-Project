@@ -19,7 +19,7 @@ namespace final_project.Actions
             
             Actor player = cast["player"][0];
 
-            Point velocity = direction.Scale(Constants.PADDLE_SPEED);
+            Point velocity = direction.Scale(Constants.PLAYER_SPEED);
             player.SetVelocity(velocity);
         }
     }

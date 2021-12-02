@@ -7,8 +7,8 @@ namespace final_project.Actors
     /// </summary>
     public class Actor
     {
-        protected Point _position;
-        protected Point _velocity;
+        public Point _position;
+        public Point _velocity;
 
         protected int _width = 0;
         protected int _height = 0;
