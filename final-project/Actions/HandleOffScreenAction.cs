@@ -22,6 +22,7 @@ namespace final_project.Actions
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
            List<Actor> enemies = cast["enemies"];
+           Actor player = cast["player"][0];
            foreach(Actor enemy in enemies)
            {
                 if(enemy.GetLeftEdge() <= 0)
@@ -41,6 +42,7 @@ namespace final_project.Actions
                 // {
                 //     Director._keepPlaying = false;
                 // } 
+                
            }
         }
 

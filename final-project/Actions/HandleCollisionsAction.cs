@@ -23,18 +23,27 @@ namespace final_project.Actions
         
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
+            Actor player = cast["player"][0];
+            List<Actor> enemies = cast["enemies"];
+            List<Actor> lives = cast["lives"];
+            List<Actor> enemiesToRemove = new List<Actor>();
+            Actor key = cast["key"][0];
+            List<Actor> keysToRemove = new List<Actor>();
+            Actor door = cast["door"][0];
+            List<Actor> artifacts = cast["artifacts"];
+            List<Actor> artifactsToRemove = new List<Actor>();
+            Actor finalArtifact = cast["finalArtifact"][0];
+            // List<Actor> powerUps = cast["powerups"];
+            List<Actor> walls = cast["walls"];
             
+            //Set cooldown time
             if(delay > 0)
             {
                 delay -= 1;
             }
             else 
-            {
-                Actor player = cast["player"][0];
-                List<Actor> enemies = cast["enemies"];
-                List<Actor> lives = cast["lives"];
-                List<Actor> enemiesToRemove = new List<Actor>();
-                
+            {                
+            //Collision with enemies
                 foreach(Actor enemy in enemies)
                 {
                     //Attack on enemy left side
@@ -58,7 +67,7 @@ namespace final_project.Actions
                     {
                         if(_physicsService.IsCollision(player,enemy))
                         {
-                            cast["lives"].RemoveAt(lives.Count-1);
+                            lives.RemoveAt(lives.Count-1);
                             delay+= 50;
                         }
                     }
@@ -67,7 +76,7 @@ namespace final_project.Actions
                     {
                         if(_physicsService.IsCollision(player,enemy))
                         {
-                            cast["lives"].RemoveAt(lives.Count-1);
+                            lives.RemoveAt(lives.Count-1);
                             delay+= 50;
                         }
                     }
@@ -77,6 +86,36 @@ namespace final_project.Actions
                         cast["enemies"].Remove(enemy);
                     }
             }
+            //Collision with keys
+                if(_physicsService.IsCollision(key,player))
+                {
+                    while(door.GetX() >= 750)
+                    {
+                        door.SetPosition(new Point(door.GetX()-1,door.GetY()));
+                    }
+                }
+            //Collision with Artifacts
+                foreach(Actor artifact in artifacts)
+                {
+                    if(_physicsService.IsCollision(player,artifact))
+                    {
+                        artifactsToRemove.Add(artifact);
+                    }
+                }
+                foreach(Actor artifact in artifactsToRemove)
+                {
+                    cast["artifacts"].Remove(artifact);
+                }
+            //Collision with Final Artifact
+                if(_physicsService.IsCollision(player,finalArtifact))
+                {
+                    Director._keepPlaying = false;
+                }
+            //If lives are gone, end game
+                if(lives.Count == 0)
+                {
+                    Director._keepPlaying = false;
+                }
         }
     }
 }

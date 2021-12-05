@@ -28,7 +28,7 @@ namespace final_project
         //Enemy Constants
         public const int ENEMY_X = MAX_X-100;
         public const int ENEMY_Y = MAX_Y-100;
-        public const int ENEMY_DX = 2;
+        public const int ENEMY_DX = 5;
         public const int ENEMY_DY = 0;
         public const int ENEMY_WIDTH = 24;
         public const int ENEMY_HEIGHT = 24;
@@ -39,7 +39,7 @@ namespace final_project
         public const int VERT_WALL_WIDTH = 30;
         public const int VERT_WALL_HEIGHT = 60;
         //Door Constants
-        public const int DOOR_WIDTH = 150;
+        public const int DOOR_WIDTH = 190;
         public const int DOOR_HEIGHT = 30;
         //Life Constants
         public const int LIFE_SPACE = 10;

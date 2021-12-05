@@ -20,14 +20,15 @@ namespace final_project
 
             // The Enemies
             cast["enemies"] = new List<Actor>();
-            Random rnd = new Random();
-            int numberOfEnemies = 10;
-            while(cast["enemies"].Count < numberOfEnemies)
-            {
-                int rndX = rnd.Next(10,Constants.ENEMY_X);
-                int rndY = rnd.Next(10,Constants.ENEMY_Y);
-                cast["enemies"].Add(new Enemy(new Point(rndX,rndY),new Point(2,0),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
-            }
+            //Six side to side enemies
+            cast["enemies"].Add(new Enemy(new Point(0,750),new Point(Constants.ENEMY_DX,Constants.ENEMY_DY),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
+            cast["enemies"].Add(new Enemy(new Point(Constants.MAX_X-Constants.ENEMY_WIDTH,510),new Point(-Constants.ENEMY_DX,Constants.ENEMY_DY),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
+
+            cast["enemies"].Add(new Enemy(new Point(0,135),new Point(Constants.ENEMY_DX,Constants.ENEMY_DY),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
+            cast["enemies"].Add(new Enemy(new Point(Constants.MAX_X-Constants.ENEMY_WIDTH,135),new Point(-Constants.ENEMY_DX,Constants.ENEMY_DY),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
+
+            cast["enemies"].Add(new Enemy(new Point(180,Constants.MAX_Y-240),new Point(Constants.ENEMY_DX,Constants.ENEMY_DY),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
+            cast["enemies"].Add(new Enemy(new Point(Constants.MAX_X-210,Constants.MAX_Y-240),new Point(-Constants.ENEMY_DX,Constants.ENEMY_DY),Constants.ENEMY_WIDTH,Constants.ENEMY_HEIGHT));
 
             // The Lives
             cast["lives"] = new List<Actor>();
@@ -114,6 +115,7 @@ namespace final_project
             cast["walls"].Add(new Walls(new Point((Constants.MAX_X/2)-260,150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
             cast["walls"].Add(new Walls(new Point((Constants.MAX_X/2)-200,150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
             cast["walls"].Add(new Walls(new Point((Constants.MAX_X/2)-140,150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
+            
             cast["walls"].Add(new Walls(new Point((Constants.MAX_X/2)+230,150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
             cast["walls"].Add(new Walls(new Point((Constants.MAX_X/2)+170,150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
             cast["walls"].Add(new Walls(new Point((Constants.MAX_X/2)+110,150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
@@ -185,28 +187,29 @@ namespace final_project
             cast["walls"].Add(new Walls(new Point(Constants.MAX_X-570,Constants.MAX_Y-150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
             cast["walls"].Add(new Walls(new Point(Constants.MAX_X-630,Constants.MAX_Y-150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
             cast["walls"].Add(new Walls(new Point(Constants.MAX_X-690,Constants.MAX_Y-150),Constants.WALL_WIDTH,Constants.WALL_HEIGHT));
+            //Door
+            cast["door"] = new List<Actor>();
+            cast["door"].Add(new Door(new Point((Constants.MAX_X/2)-80,150),Constants.DOOR_WIDTH,Constants.DOOR_HEIGHT));
             
-            // Artifacts
-            // cast["artifact"] = new List<Actor>();
-            // int numOfArtifacts = 5;
-            // while(cast["artifact"].Count <= numOfArtifacts)
-            // {
-            //     int rndX = rnd.Next(10,Constants.ENEMY_X);
-            //     int rndY = rnd.Next(10,Constants.ENEMY_Y);
-            //     //Add Spacing using for loop?
-            //     //Maybe add to specific locations
-            //     cast["artifact"].Add(new Artifact(new Point(rndX,rndY),Constants.ARTIFACT_WIDTH,Constants.ARTIFACT_HEIGHT));
-            // }
+            // Key
+            cast["key"] = new List<Actor>();
+            cast["key"].Add(new Key(new Point(Constants.MAX_X-75,Constants.MAX_Y-350),Constants.KEY_WIDTH,Constants.KEY_HEIGHT));
+
+            //Artifacts
+            cast["artifacts"] = new List<Actor>();
+            cast["artifacts"].Add(new Artifact(new Point(65,Constants.MAX_Y-350),Constants.ARTIFACT_WIDTH,Constants.ARTIFACT_HEIGHT));
+            cast["artifacts"].Add(new Artifact(new Point(85,200),Constants.ARTIFACT_WIDTH,Constants.ARTIFACT_HEIGHT));
+            cast["artifacts"].Add(new Artifact(new Point(Constants.MAX_X-85,200),Constants.ARTIFACT_WIDTH,Constants.ARTIFACT_HEIGHT));
+
+            //Final Artifact
+            cast["finalArtifact"] = new List<Actor>();
+            cast["finalArtifact"].Add(new FinalArtifact(new Point(Constants.MAX_X/2,50),Constants.FINAL_ARTIFACT_WIDTH,Constants.FINAL_ARTIFACT_HEIGHT));
 
             // Power ups
             // cast["powerups"] = new List<Actor>();
-            // int numOfPowerUps = 5;
-            // while(cast["powerups"].Count <= numOfPowerUps)
-            // {
-            //     int rndX = rnd.Next(10,Constants.ENEMY_X);
-            //     int rndY = rnd.Next(10,Constants.ENEMY_Y);
-            //     cast["powerups"].Add(new PowerUp(new Point(rndX,rndY),Constants.POWERUP_WIDTH,Constants.POWERUP_HEIGHT));
-            // }
+            // cast["powerups"].Add(new PowerUp(new Point(550,25),Constants.POWERUP_WIDTH,Constants.POWERUP_HEIGHT));
+            // cast["powerups"].Add(new PowerUp(new Point(Constants.MAX_X-550,25),Constants.POWERUP_WIDTH,Constants.POWERUP_HEIGHT));
+
             // Create the script
             Dictionary<string, List<Action>> script = new Dictionary<string, List<Action>>();
 
