@@ -12,7 +12,7 @@ namespace final_project
         public const int FRAME_RATE = 30;
 
         public const int DEFAULT_SQUARE_SIZE = 20;
-        public const int DEFAULT_FONT_SIZE = 20;
+        public const int DEFAULT_FONT_SIZE = 40;
         public const int DEFAULT_TEXT_OFFSET = 4;
 
         // Images
@@ -38,6 +38,11 @@ namespace final_project
         //Vertical Wall Constants
         public const int VERT_WALL_WIDTH = 30;
         public const int VERT_WALL_HEIGHT = 60;
+        //Border Wall Constants
+        public const int BORDER_WALL_X_WIDTH = 2000;
+        public const int BORDER_WALL_X_HEIGHT = 30;
+        public const int BORDER_WALL_Y_WIDTH = 1300;
+        public const int BORDER_WALL_Y_HEIGHT = 30;
         //Door Constants
         public const int DOOR_WIDTH = 190;
         public const int DOOR_HEIGHT = 30;

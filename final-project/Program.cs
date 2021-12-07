@@ -205,6 +205,12 @@ namespace final_project
             cast["finalArtifact"] = new List<Actor>();
             cast["finalArtifact"].Add(new FinalArtifact(new Point(Constants.MAX_X/2,50),Constants.FINAL_ARTIFACT_WIDTH,Constants.FINAL_ARTIFACT_HEIGHT));
 
+            //Win message
+            cast["winMessage"] = new List<Actor>();
+            // if(cast["walls"].Count == 0)
+            // {
+            //     cast["winMessage"].Add(new WinMessage(new Point((Constants.MAX_X/2)-Constants.DEFAULT_FONT_SIZE,Constants.MAX_Y/2),text));
+            // }
             // Power ups
             // cast["powerups"] = new List<Actor>();
             // cast["powerups"].Add(new PowerUp(new Point(550,25),Constants.POWERUP_WIDTH,Constants.POWERUP_HEIGHT));

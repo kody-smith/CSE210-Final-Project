@@ -42,8 +42,25 @@ namespace final_project.Actions
                 // {
                 //     Director._keepPlaying = false;
                 // } 
-                
            }
+           if(player.GetLeftEdge() <= 5)
+           {
+               player.SetPosition(new Point(player.GetX()+15,player.GetY()));
+           }
+           if(player.GetRightEdge() >= Constants.MAX_X)
+           {
+               player.SetPosition(new Point(player.GetX()-15,player.GetY()));
+           }
+           if(player.GetTopEdge() <= 0)
+            {
+                player.SetPosition(new Point(player.GetX(),player.GetY()+15));
+            }
+            if(player.GetBottomEdge() >= Constants.MAX_Y)
+            {
+                player.SetPosition(new Point(player.GetX(),player.GetY()-15));
+            } 
+
+
         }
 
     }

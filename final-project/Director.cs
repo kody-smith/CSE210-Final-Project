@@ -24,7 +24,7 @@ namespace final_project
             _cast = cast;
             _script = script;
         }
-
+        
         /// <summary>
         /// This method starts the game and continues running until it is finished.
         /// </summary>
@@ -37,7 +37,8 @@ namespace final_project
                 CueAction("output");
 
                 if (Raylib_cs.Raylib.WindowShouldClose())
-                { 
+                {
+                    
                     _keepPlaying = false;
                 }
             }
