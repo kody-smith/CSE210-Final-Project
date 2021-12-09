@@ -30,6 +30,7 @@ namespace final_project
         /// </summary>
         public void Direct()
         {
+            
             while (_keepPlaying)
             {
                 CueAction("input");
@@ -42,6 +43,7 @@ namespace final_project
                     _keepPlaying = false;
                 }
             }
+            
 
             Console.WriteLine("Game over!");
         }

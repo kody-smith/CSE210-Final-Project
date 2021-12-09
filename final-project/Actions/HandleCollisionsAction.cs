@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using final_project.Actors;
 using final_project.Services;
+using Raylib_cs;
 using System;
 
 namespace final_project.Actions
@@ -51,6 +52,12 @@ namespace final_project.Actions
             //Collision with enemies
                 foreach(Actor enemy in enemies)
                 {
+                    if(_physicsService.IsCollision(player,finalArtifact))
+                    {
+                        winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),winText));
+                        enemy.SetVelocity(new Point(0,0));
+                        
+                    }
                     //Enemy bounce of wall
                     foreach(Actor wall in walls)
                     {
@@ -168,11 +175,7 @@ namespace final_project.Actions
                         cast["enemies"].Remove(enemy);
                     }
                 //Collision with Final Artifact
-                if(_physicsService.IsCollision(player,finalArtifact))
-                {
-                    winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),winText));
-                    Director._keepPlaying = false;
-                }
+                
             }
             //Collision with key
             if(artifacts.Count == 0)
@@ -203,7 +206,7 @@ namespace final_project.Actions
                 if(lives.Count == 0)
                 {
                     winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),loseText));
-                    Director._keepPlaying = false;
+                    // Director._keepPlaying = false;
                 }
         }
     }

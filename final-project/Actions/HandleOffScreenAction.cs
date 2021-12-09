@@ -45,19 +45,19 @@ namespace final_project.Actions
            }
            if(player.GetLeftEdge() <= 5)
            {
-               player.SetPosition(new Point(player.GetX()+15,player.GetY()));
+               player.SetPosition(new Point(player.GetX()+10,player.GetY()));
            }
            if(player.GetRightEdge() >= Constants.MAX_X)
            {
-               player.SetPosition(new Point(player.GetX()-15,player.GetY()));
+               player.SetPosition(new Point(player.GetX()-10,player.GetY()));
            }
-           if(player.GetTopEdge() <= 0)
+           if(player.GetTopEdge() <= 5)
             {
-                player.SetPosition(new Point(player.GetX(),player.GetY()+15));
+                player.SetPosition(new Point(player.GetX(),player.GetY()+10));
             }
             if(player.GetBottomEdge() >= Constants.MAX_Y)
             {
-                player.SetPosition(new Point(player.GetX(),player.GetY()-15));
+                player.SetPosition(new Point(player.GetX(),player.GetY()-10));
             } 
 
 
