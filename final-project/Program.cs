@@ -243,13 +243,12 @@ namespace final_project
             HandleCollisionsAction handleCollisionsAction = new HandleCollisionsAction(physicsService,audioService);
             script["update"].Add(handleCollisionsAction);
 
-            ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);
+            ControlActorsAction controlActorsAction = new ControlActorsAction(inputService,audioService);
             script["input"].Add(controlActorsAction);
 
             // Start up the game
-            outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Top Down RPG", Constants.FRAME_RATE);
-            // audioService.StartAudio();
-            // audioService.PlaySound();
+            outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Iowa James - and the Stealers of the Lost Artifacts", Constants.FRAME_RATE);
+            audioService.StartAudio();
 
             Director theDirector = new Director(cast, script);
             theDirector.Direct();

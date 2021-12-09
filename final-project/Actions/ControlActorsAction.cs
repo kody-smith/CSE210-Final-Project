@@ -7,10 +7,12 @@ namespace final_project.Actions
     public class ControlActorsAction : Action
     {
         InputService _inputService;
+        AudioService _audioService;
 
-        public ControlActorsAction(InputService inputService)
+        public ControlActorsAction(InputService inputService,AudioService audioService)
         {
             _inputService = inputService;
+            _audioService = audioService;
         }
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
@@ -24,6 +26,7 @@ namespace final_project.Actions
             if(_inputService.IsLeftPressed())
             {
                 player.SetImage(Constants.PLAYER_LEFT_IMAGE);
+                
             }
             if(_inputService.IsRightPressed())
             {
