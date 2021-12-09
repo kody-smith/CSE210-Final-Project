@@ -143,6 +143,16 @@ namespace final_project.Actors
             int y = velocity.GetY();
             SetVelocity(new Point(-x,y));
         }
+        // public void FlipImage()
+        // {
+        //     Point velocity = GetVelocity();
+        //     int x = velocity.GetX();
+        //     int y = velocity.GetY();
+        //     if(velocity == new Point(-x,y))
+        //     {
+        //         SetImage("./Assets/enemyLeft.png");
+        //     }
+        // }
         public void AddPoints(int points)
         {
             _points += points;

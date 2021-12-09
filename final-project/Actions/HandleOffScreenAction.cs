@@ -28,11 +28,12 @@ namespace final_project.Actions
                 if(enemy.GetLeftEdge() <= 0)
                 {
                     enemy.ChangeDX();
-
+                    enemy.SetImage(Constants.ENEMY_RIGHT_IMAGE);
                 }
                 if(enemy.GetRightEdge() >= Constants.MAX_X)
                 {
                     enemy.ChangeDX();
+                    enemy.SetImage(Constants.ENEMY_LEFT_IMAGE);
                 }
                 // if(enemy.GetTopEdge() <= 0)
                 // {

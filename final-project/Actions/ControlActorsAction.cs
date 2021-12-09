@@ -21,6 +21,22 @@ namespace final_project.Actions
 
             Point velocity = direction.Scale(Constants.PLAYER_SPEED);
             player.SetVelocity(velocity);
+            if(_inputService.IsLeftPressed())
+            {
+                player.SetImage(Constants.PLAYER_LEFT_IMAGE);
+            }
+            if(_inputService.IsRightPressed())
+            {
+                player.SetImage(Constants.PLAYER_RIGHT_IMAGE);
+            }
+            if(_inputService.IsUpPressed())
+            {
+                player.SetImage(Constants.PLAYER_UP_IMAGE);
+            }
+            if(_inputService.IsDownPressed())
+            {
+                player.SetImage(Constants.PLAYER_DOWN_IMAGE);
+            }
         }
     }
 }
