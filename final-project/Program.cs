@@ -240,7 +240,7 @@ namespace final_project
             HandleOffScreenAction handleOffScreenAction = new HandleOffScreenAction(physicsService,audioService);
             script["update"].Add(handleOffScreenAction);
             
-            HandleCollisionsAction handleCollisionsAction = new HandleCollisionsAction(physicsService);
+            HandleCollisionsAction handleCollisionsAction = new HandleCollisionsAction(physicsService,audioService);
             script["update"].Add(handleCollisionsAction);
 
             ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);

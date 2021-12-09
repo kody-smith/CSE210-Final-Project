@@ -13,12 +13,13 @@ namespace final_project.Actions
     {
         PhysicsService _physicsService = new PhysicsService();
         InputService _inputService = new InputService();
-        AudioService audioService = new AudioService();
+        AudioService _audioService = new AudioService();
         Random rnd = new Random();
         private int delay = 0;
-        public HandleCollisionsAction(PhysicsService physicsService)
+        public HandleCollisionsAction(PhysicsService physicsService, AudioService audioService)
         {
             _physicsService = physicsService;
+            _audioService = audioService;
         }
 
         
@@ -56,7 +57,14 @@ namespace final_project.Actions
                     {
                         winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),winText));
                         enemy.SetVelocity(new Point(0,0));
-                        
+                        _audioService.PlaySound(Constants.WIN);
+                    }
+                    //If lives are gone, end game
+                    if(lives.Count == 0)
+                    {
+                        winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),loseText));
+                        enemy.SetVelocity(new Point(0,0));
+                        _audioService.PlaySound(Constants.GAME_OVER);
                     }
                     //Enemy bounce of wall
                     foreach(Actor wall in walls)
@@ -158,6 +166,7 @@ namespace final_project.Actions
                         {
                             lives.RemoveAt(lives.Count-1);
                             delay+= 50;
+                            _audioService.PlaySound(Constants.PAIN);
                         }
                     }
                     //Remove life on collision on enemy right
@@ -167,6 +176,7 @@ namespace final_project.Actions
                         {
                             lives.RemoveAt(lives.Count-1);
                             delay+= 50;
+                            _audioService.PlaySound(Constants.PAIN);
                         }
                     }
                 }
@@ -194,19 +204,12 @@ namespace final_project.Actions
                     if(_physicsService.IsCollision(player,artifact))
                     {
                         artifactsToRemove.Add(artifact);
+                        _audioService.PlaySound(Constants.COLLECT_ARTIFACT);
                     }
                 }
                 foreach(Actor artifact in artifactsToRemove)
                 {
                     cast["artifacts"].Remove(artifact);
-                }
-
-            
-            //If lives are gone, end game
-                if(lives.Count == 0)
-                {
-                    winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),loseText));
-                    // Director._keepPlaying = false;
                 }
         }
     }

@@ -10,6 +10,7 @@ namespace final_project.Services
     /// </summary>
     public class InputService
     {
+        public bool _isActive;
         public InputService()
         {
 
@@ -36,7 +37,6 @@ namespace final_project.Services
         {
             return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_SPACE);
         }
-
         /// <summary>
         /// Gets the direction asked for by the current key presses
         /// </summary>
@@ -45,7 +45,6 @@ namespace final_project.Services
         {
             int x = 0;
             int y = 0;
-
             if (IsLeftPressed())
             {
                 x = -1;
