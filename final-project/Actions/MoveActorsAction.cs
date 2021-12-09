@@ -13,6 +13,7 @@ namespace final_project.Actions
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
+            List<Actor> enemies = cast["enemies"];
             foreach (List<Actor> group in cast.Values)
             {
                 foreach (Actor actor in group)
@@ -20,10 +21,22 @@ namespace final_project.Actions
                     MoveActor(actor);
                 }
             }
+            foreach(Actor enemy in enemies)
+            {
+                if(enemy.GetVelocity().GetX() <= 0)
+                {
+                    enemy.SetImage(Constants.ENEMY_LEFT_IMAGE);
+                }
+                else
+                {
+                    enemy.SetImage(Constants.ENEMY_RIGHT_IMAGE);
+                }
+            }
         }
         
         private void MoveActor(Actor actor)
         {
+            
             int x = actor.GetX();
             int y = actor.GetY();
 
@@ -36,6 +49,7 @@ namespace final_project.Actions
             if (newX < 0)
             {
                 newX = Constants.MAX_X;
+                
             }
 
             if (newY < 0)
