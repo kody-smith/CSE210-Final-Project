@@ -73,12 +73,13 @@ namespace final_project
         public const string FINAL_ARTIFACT_IMAGE = "./Assets/finalArtifact.png";
 
         //Sounds
-        public const string BACKGROUND_MUSIC = "./Assets/mixkit-arcade-retro-background-219.wav";
-        public const string FOOTSTEPS = "./Assets/mixkit-footsteps-in-a-tunnel-loop-543.wav";
         public const string COLLECT_ARTIFACT = "./Assets/mixkit-game-treasure-coin-2038.wav";
         public const string PAIN = "./Assets/mixkit-man-in-pain-2197.wav";
         public const string GAME_OVER = "./Assets/mixkit-retro-game-over-1947.wav";
         public const string WIN = "./Assets/mixkit-video-game-win-2016.wav";
+        public const string LEVER = "./Assets/mixkit-tech-click-1140.wav";
+        public const string ATTACK = "./Assets/mixkit-dagger-woosh-1487.wav";
+        public const string START = "./Assets/mixkit-small-win-2020.wav";
 
     }
 

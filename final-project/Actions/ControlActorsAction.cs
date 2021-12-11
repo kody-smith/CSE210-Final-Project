@@ -25,8 +25,7 @@ namespace final_project.Actions
             player.SetVelocity(velocity);
             if(_inputService.IsLeftPressed())
             {
-                player.SetImage(Constants.PLAYER_LEFT_IMAGE);
-                
+                player.SetImage(Constants.PLAYER_LEFT_IMAGE);  
             }
             if(_inputService.IsRightPressed())
             {
@@ -39,6 +38,10 @@ namespace final_project.Actions
             if(_inputService.IsDownPressed())
             {
                 player.SetImage(Constants.PLAYER_DOWN_IMAGE);
+            }
+            if(_inputService.IsSpaceBarDown())
+            {
+                _audioService.PlaySound(Constants.ATTACK);
             }
         }
     }

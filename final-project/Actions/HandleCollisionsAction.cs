@@ -195,6 +195,7 @@ namespace final_project.Actions
                     while(door.GetX() >= 750)
                     {
                         door.SetPosition(new Point(door.GetX()-1,door.GetY()));
+                        _audioService.PlaySound(Constants.LEVER);
                     }
                 }
             }   
