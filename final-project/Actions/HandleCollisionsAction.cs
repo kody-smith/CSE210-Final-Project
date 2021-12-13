@@ -55,9 +55,9 @@ namespace final_project.Actions
                 {
                     if(_physicsService.IsCollision(player,finalArtifact))
                     {
-                        winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),winText));
-                        enemy.SetVelocity(new Point(0,0));
                         _audioService.PlaySound(Constants.WIN);
+                        winMessage.Add(new WinMessage(new Point((Constants.MAX_X/2)-120,Constants.MAX_Y/2-200),winText));
+                        enemy.SetVelocity(new Point(0,0)); 
                     }
                     //If lives are gone, end game
                     if(lives.Count == 0)
